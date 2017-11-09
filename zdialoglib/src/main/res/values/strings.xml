@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ZDialogLib</string>
+    <string name="ensure">确定</string>
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="tip_title">你确定要删除吗？</string>
+    <string name="tip_desc">删除之后将无法恢复</string>
+    <string name="local">从本地相册中获取</string>
+    <string name="photo">拍照</string>
+</resources>
