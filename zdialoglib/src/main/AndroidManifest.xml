@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cc.ibooker.zdialoglib">
 
     <!--用于写入数据到扩展存储卡(SD)-->
@@ -6,7 +7,9 @@
     <!-- 往sdcard中读取数据的权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- 在sdcard中创建/删除文件的权限 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
     <!--添加拍照权限-->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature
@@ -21,7 +24,7 @@
         <!--Android7.0+用于访问外部文件 -->
         <provider
             android:name=".ZFileProvider"
-            android:authorities="cc.ibooker.zdialoglib.fileProvider"
+            android:authorities="${applicationId}.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
