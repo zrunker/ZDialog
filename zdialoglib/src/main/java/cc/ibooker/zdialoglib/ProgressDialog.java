@@ -3,18 +3,12 @@ package cc.ibooker.zdialoglib;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 /**
  * 自定义进度条Dialog
@@ -23,9 +17,6 @@ import android.widget.TextView;
 public class ProgressDialog {
     private Context context;
     private Dialog dialog;
-    private ImageView imageView;
-    private TextView messageTv;
-    private ProgressBar progressBar;
 
     public enum ProDialogGravity {
         GRAVITY_CENTER,
@@ -51,76 +42,12 @@ public class ProgressDialog {
     private void init() {
         dialog.setContentView(R.layout.layout_progress_dialog2);
 
-        imageView = dialog.findViewById(R.id.dialog_statue);
-        imageView.setVisibility(View.GONE);
-        messageTv = dialog.findViewById(R.id.dialog_message);
-        messageTv.setVisibility(View.GONE);
-        progressBar = dialog.findViewById(R.id.dialog_progress);
-        progressBar.setVisibility(View.VISIBLE);
-
         // 按返回键是否取消
         dialog.setCancelable(true);
         // 点击Dialog外围是否取消
         dialog.setCanceledOnTouchOutside(false);
         // 设置默认透明度0.2f
         this.setDimAmount(0.2f);
-    }
-
-    /**
-     * 给Dialog设置提示信息
-     */
-    public ProgressDialog setMessage(CharSequence message) {
-        if (dialog.isShowing() && !TextUtils.isEmpty(message)) {
-            messageTv.setVisibility(View.VISIBLE);
-            messageTv.setText(message);
-            messageTv.invalidate();// 强制刷新
-        }
-        return this;
-    }
-
-    /**
-     * 给Dialog设置提示信息颜色
-     *
-     * @param color 16进制颜色
-     */
-    public ProgressDialog setMessageColor(String color) {
-        try {
-            if (dialog.isShowing() && messageTv != null) {
-                messageTv.setTextColor(Color.parseColor(color));
-                messageTv.invalidate();// 强制刷新
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return this;
-    }
-
-    /**
-     * 改变dialog的状态图片
-     */
-    public ProgressDialog setImageStatue(int source) {
-        if (dialog.isShowing()) {
-            progressBar.setVisibility(View.GONE);
-            imageView.setVisibility(View.VISIBLE);
-            imageView.setImageResource(source);
-            imageView.invalidate();// 强制刷新
-        }
-        return this;
-    }
-
-    /**
-     * 显示ProgressBar
-     */
-    public ProgressDialog setProgressBar(boolean bool) {
-        if (dialog.isShowing()) {
-            if (bool) {
-                imageView.setVisibility(View.GONE);
-                progressBar.setVisibility(View.VISIBLE);
-            } else
-                progressBar.setVisibility(View.GONE);
-            progressBar.invalidate();
-        }
-        return this;
     }
 
     /**
