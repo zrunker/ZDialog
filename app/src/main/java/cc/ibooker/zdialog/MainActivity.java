@@ -15,6 +15,7 @@ import cc.ibooker.zdialoglib.ChoosePictrueDialog;
 import cc.ibooker.zdialoglib.DelDialog;
 import cc.ibooker.zdialoglib.DiyDialog;
 import cc.ibooker.zdialoglib.ProDialog;
+import cc.ibooker.zdialoglib.ProgressDialog;
 import cc.ibooker.zdialoglib.TipDialog;
 import cc.ibooker.zdialoglib.ZDialogConstantUtil;
 
@@ -30,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, ChoosePictrueActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, ChoosePictrueActivity.class);
+//        startActivity(intent);
     }
 
     @Override
@@ -87,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
                         .setMessage("再次加载");
             }
         }, 6000);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+                progressDialog.showProDialog();
+            }
+        }, 10000);
     }
 
     // 显示提示Dialog
