@@ -49,7 +49,7 @@ public class ChoosePictrueDialog {
      */
     private void init() {
         View view = LayoutInflater.from(context).inflate(R.layout.layout_choose_pictrue, null);
-        localBtn = (Button) view.findViewById(R.id.btn_local);
+        localBtn = view.findViewById(R.id.btn_local);
         localBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +64,7 @@ public class ChoosePictrueDialog {
                 }
             }
         });
-        photoBtn = (Button) view.findViewById(R.id.btn_photo);
+        photoBtn = view.findViewById(R.id.btn_photo);
         photoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +74,7 @@ public class ChoosePictrueDialog {
                 startPhoto();
             }
         });
-        cancelBtn = (Button) view.findViewById(R.id.btn_cancel);
+        cancelBtn = view.findViewById(R.id.btn_cancel);
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

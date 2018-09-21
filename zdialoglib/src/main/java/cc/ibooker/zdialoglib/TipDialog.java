@@ -46,9 +46,9 @@ public class TipDialog {
      */
     private void init() {
         dialog.setContentView(R.layout.layout_tip_dialog);
-        titleTv = (TextView) dialog.findViewById(R.id.tv_title);
-        descTv = (TextView) dialog.findViewById(R.id.tv_desc);
-        ensureTv = (TextView) dialog.findViewById(R.id.tv_ensure);
+        titleTv = dialog.findViewById(R.id.tv_title);
+        descTv = dialog.findViewById(R.id.tv_desc);
+        ensureTv = dialog.findViewById(R.id.tv_ensure);
         ensureTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +61,7 @@ public class TipDialog {
                 }
             }
         });
-        cancelTv = (TextView) dialog.findViewById(R.id.tv_cancel);
+        cancelTv = dialog.findViewById(R.id.tv_cancel);
         cancelTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -419,7 +419,9 @@ public class TipDialog {
     private int getScreenH(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics outMetrics = new DisplayMetrics();
-        wm.getDefaultDisplay().getMetrics(outMetrics);
+        if (wm != null) {
+            wm.getDefaultDisplay().getMetrics(outMetrics);
+        }
         return outMetrics.heightPixels;
     }
 

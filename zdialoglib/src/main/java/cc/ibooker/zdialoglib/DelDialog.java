@@ -46,7 +46,7 @@ public class DelDialog {
      */
     private void init() {
         dialog.setContentView(R.layout.layout_del_dialog);
-        delBtn = (Button) dialog.findViewById(R.id.btn_del);
+        delBtn = dialog.findViewById(R.id.btn_del);
         delBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +57,7 @@ public class DelDialog {
                     onDelListener.onDel();
             }
         });
-        cancelBtn = (Button) dialog.findViewById(R.id.btn_cancel);
+        cancelBtn = dialog.findViewById(R.id.btn_cancel);
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -290,7 +290,9 @@ public class DelDialog {
     private int getScreenH(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics outMetrics = new DisplayMetrics();
-        wm.getDefaultDisplay().getMetrics(outMetrics);
+        if (wm != null) {
+            wm.getDefaultDisplay().getMetrics(outMetrics);
+        }
         return outMetrics.heightPixels;
     }
 
