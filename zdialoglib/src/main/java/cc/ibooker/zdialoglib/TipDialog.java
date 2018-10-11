@@ -131,6 +131,23 @@ public class TipDialog {
     }
 
     /**
+     * 修改主题文字高度
+     *
+     * @param height px 高度
+     */
+    public TipDialog setTitleHeight(int height) {
+        try {
+            if (titleTv != null && height > 0) {
+                titleTv.setHeight(height);
+                titleTv.invalidate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return this;
+    }
+
+    /**
      * 修改主题是否显示
      *
      * @param visible true显示  false不显示 默认显示
