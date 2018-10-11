@@ -215,6 +215,19 @@ public class TipDialog {
     }
 
     /**
+     * 修改描述高度
+     *
+     * @param height px 高度
+     */
+    public TipDialog setDescHeight(int height) {
+        if (descTv != null && height > 0) {
+            descTv.setHeight(height);
+            descTv.invalidate();
+        }
+        return this;
+    }
+
+    /**
      * 修改确定文字
      *
      * @param text 文字内容
@@ -258,6 +271,19 @@ public class TipDialog {
     }
 
     /**
+     * 修改确定文字高度
+     *
+     * @param height px 高度
+     */
+    public TipDialog setEnsureHeight(int height) {
+        if (ensureTv != null && height > 0) {
+            ensureTv.setHeight(height);
+            ensureTv.invalidate();
+        }
+        return this;
+    }
+
+    /**
      * 修改取消文字
      *
      * @param text 文字内容
@@ -296,6 +322,19 @@ public class TipDialog {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        return this;
+    }
+
+    /**
+     * 修改取消文字高度
+     *
+     * @param height px 高度
+     */
+    public TipDialog setCancelHeight(int height) {
+        if (cancelTv != null && height > 0) {
+            cancelTv.setHeight(height);
+            cancelTv.invalidate();
         }
         return this;
     }
