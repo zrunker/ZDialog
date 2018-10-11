@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 .setEnsureColor("#40aff2")
                 // 设置确定文本
                 .setEnsureText("确定")
+                .setTitleHeight(120)
                 // 显示Dialog
                 .showTipDialog();
 

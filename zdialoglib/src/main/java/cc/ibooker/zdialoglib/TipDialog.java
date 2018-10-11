@@ -47,8 +47,11 @@ public class TipDialog {
     private void init() {
         dialog.setContentView(R.layout.layout_tip_dialog);
         titleTv = dialog.findViewById(R.id.tv_title);
+        titleTv.setGravity(Gravity.CENTER);
         descTv = dialog.findViewById(R.id.tv_desc);
+        descTv.setGravity(Gravity.CENTER);
         ensureTv = dialog.findViewById(R.id.tv_ensure);
+        ensureTv.setGravity(Gravity.CENTER);
         ensureTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +65,7 @@ public class TipDialog {
             }
         });
         cancelTv = dialog.findViewById(R.id.tv_cancel);
+        cancelTv.setGravity(Gravity.CENTER);
         cancelTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -160,6 +164,18 @@ public class TipDialog {
     }
 
     /**
+     * 修改主题显示位置
+     *
+     * @param gravity 位置
+     */
+    public TipDialog setTitleGravity(int gravity) {
+        if (titleTv != null) {
+            titleTv.setGravity(gravity);
+        }
+        return this;
+    }
+
+    /**
      * 修改描述文字
      *
      * @param text 文字内容
@@ -228,6 +244,18 @@ public class TipDialog {
     }
 
     /**
+     * 修改描述显示位置
+     *
+     * @param gravity 位置
+     */
+    public TipDialog setDescGravity(int gravity) {
+        if (descTv != null) {
+            descTv.setGravity(gravity);
+        }
+        return this;
+    }
+
+    /**
      * 修改确定文字
      *
      * @param text 文字内容
@@ -284,6 +312,18 @@ public class TipDialog {
     }
 
     /**
+     * 修改确定文字显示位置
+     *
+     * @param gravity 位置
+     */
+    public TipDialog setEnsureGravity(int gravity) {
+        if (ensureTv != null) {
+            ensureTv.setGravity(gravity);
+        }
+        return this;
+    }
+
+    /**
      * 修改取消文字
      *
      * @param text 文字内容
@@ -335,6 +375,18 @@ public class TipDialog {
         if (cancelTv != null && height > 0) {
             cancelTv.setHeight(height);
             cancelTv.invalidate();
+        }
+        return this;
+    }
+
+    /**
+     * 修改取消文字显示位置
+     *
+     * @param gravity 位置
+     */
+    public TipDialog setCancelGravity(int gravity) {
+        if (cancelTv != null) {
+            cancelTv.setGravity(gravity);
         }
         return this;
     }
