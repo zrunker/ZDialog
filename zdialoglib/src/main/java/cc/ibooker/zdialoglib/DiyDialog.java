@@ -52,6 +52,11 @@ public class DiyDialog {
         this.setDiyDialogGravity(DiyDialogGravity.GRAVITY_CENTER);
     }
 
+    // 是否展示
+    public boolean isShowing() {
+        return dialog != null && dialog.isShowing();
+    }
+
     /**
      * 设置Dialog显示内容
      *

@@ -81,6 +81,11 @@ public class DelDialog {
         this.setDelDialogWidth(60);
     }
 
+    // 是否展示
+    public boolean isShowing() {
+        return dialog != null && dialog.isShowing();
+    }
+
     /**
      * 设置DelBtn文字大小
      *

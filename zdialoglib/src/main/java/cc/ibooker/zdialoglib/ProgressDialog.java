@@ -50,6 +50,11 @@ public class ProgressDialog {
         this.setDimAmount(0.2f);
     }
 
+    // 是否展示
+    public boolean isShowing() {
+        return dialog != null && dialog.isShowing();
+    }
+
     /**
      * 按返回键是否取消
      *

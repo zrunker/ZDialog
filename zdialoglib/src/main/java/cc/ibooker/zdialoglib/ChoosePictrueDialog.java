@@ -98,6 +98,11 @@ public class ChoosePictrueDialog {
         this.setChoosePictrueDialogWidth(75);
     }
 
+    // 是否展示
+    public boolean isShowing() {
+        return dialog != null && dialog.isShowing();
+    }
+
     // 启动拍照
     public void startPhoto() {
         if (onPhotoListener != null) {

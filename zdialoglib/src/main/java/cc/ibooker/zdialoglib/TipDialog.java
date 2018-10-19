@@ -91,6 +91,11 @@ public class TipDialog {
         this.setTipDialogGravity(TipDialogGravity.GRAVITY_CENTER);
     }
 
+    // 是否展示
+    public boolean isShowing() {
+        return dialog != null && dialog.isShowing();
+    }
+
     /**
      * 修改主题文字
      *

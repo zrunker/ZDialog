@@ -66,6 +66,11 @@ public class ProDialog {
         this.setDimAmount(0.2f);
     }
 
+    // 是否展示
+    public boolean isShowing() {
+        return dialog != null && dialog.isShowing();
+    }
+
     /**
      * 给Dialog设置提示信息
      */
