@@ -27,6 +27,10 @@ public class DiyDialog {
         GRAVITY_BOTTOM
     }
 
+    public Dialog getDialog() {
+        return dialog;
+    }
+
     public DiyDialog(@NonNull Context context, @NonNull View view) {
         this(context, R.style.diydialog, view);
     }

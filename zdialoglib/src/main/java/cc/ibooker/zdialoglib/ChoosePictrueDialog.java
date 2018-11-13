@@ -29,8 +29,28 @@ public class ChoosePictrueDialog {
     private Dialog dialog;
     private Button localBtn, photoBtn, cancelBtn;
 
+    public Dialog getDialog() {
+        return dialog;
+    }
+
+    public Button getLocalBtn() {
+        return localBtn;
+    }
+
+    public Button getPhotoBtn() {
+        return photoBtn;
+    }
+
+    public Button getCancelBtn() {
+        return cancelBtn;
+    }
+
     public enum ChoosePictrueDialogGravity {
-        GRAVITY_BOTTOM, GRAVITY_CENTER, GRAVITY_LEFT, GRAVITY_RIGHT, GRAVITY_TOP
+        GRAVITY_BOTTOM,
+        GRAVITY_CENTER,
+        GRAVITY_LEFT,
+        GRAVITY_RIGHT,
+        GRAVITY_TOP
     }
 
     public ChoosePictrueDialog(@NonNull Context context) {
@@ -129,6 +149,22 @@ public class ChoosePictrueDialog {
                 }
             }
         }
+    }
+
+    /**
+     * 设置三个按钮的字体颜色
+     *
+     * @param pixels 待设置高度px
+     */
+    public ChoosePictrueDialog setBtnHeight(int pixels) {
+        try {
+            localBtn.setHeight(pixels);
+            photoBtn.setHeight(pixels);
+            cancelBtn.setHeight(pixels);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return this;
     }
 
     /**

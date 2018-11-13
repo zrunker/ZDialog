@@ -26,6 +26,10 @@ public class ProgressDialog {
         GRAVITY_BOTTOM
     }
 
+    public Dialog getDialog() {
+        return dialog;
+    }
+
     public ProgressDialog(@NonNull Context context) {
         this(context, R.style.proDialog);
     }

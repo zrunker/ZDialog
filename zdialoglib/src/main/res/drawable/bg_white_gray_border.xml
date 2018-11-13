@@ -5,11 +5,11 @@
             <!--内容-->
             <solid android:color="#FFFFFF" />
             <!--四角-->
-            <corners android:radius="4dp" />
+            <corners android:radius="3dp" />
             <!--边框-->
-            <stroke
+            <!--<stroke
                 android:width="0.6dp"
-                android:color="#CCCCCC" />
+                android:color="#CCCCCC" />-->
         </shape>
     </item>
 </layer-list>

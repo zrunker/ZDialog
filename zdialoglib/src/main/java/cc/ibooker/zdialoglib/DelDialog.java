@@ -31,6 +31,18 @@ public class DelDialog {
         GRAVITY_BOTTOM
     }
 
+    public Dialog getDialog() {
+        return dialog;
+    }
+
+    public Button getDelBtn() {
+        return delBtn;
+    }
+
+    public Button getCancelBtn() {
+        return cancelBtn;
+    }
+
     public DelDialog(@NonNull Context context) {
         this(context, R.style.diydialog);
     }

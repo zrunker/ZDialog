@@ -31,6 +31,26 @@ public class TipDialog {
         GRAVITY_BOTTOM
     }
 
+    public Dialog getDialog() {
+        return dialog;
+    }
+
+    public TextView getTitleTv() {
+        return titleTv;
+    }
+
+    public TextView getDescTv() {
+        return descTv;
+    }
+
+    public TextView getEnsureTv() {
+        return ensureTv;
+    }
+
+    public TextView getCancelTv() {
+        return cancelTv;
+    }
+
     public TipDialog(@NonNull Context context) {
         this(context, R.style.diydialog);
     }

@@ -35,6 +35,22 @@ public class ProDialog {
         GRAVITY_BOTTOM
     }
 
+    public Dialog getDialog() {
+        return dialog;
+    }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public TextView getMessageTv() {
+        return messageTv;
+    }
+
+    public ProgressBar getProgressBar() {
+        return progressBar;
+    }
+
     public ProDialog(@NonNull Context context) {
         this(context, R.style.proDialog);
     }
