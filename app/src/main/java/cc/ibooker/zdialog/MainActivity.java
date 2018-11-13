@@ -254,6 +254,8 @@ public class MainActivity extends AppCompatActivity {
 //        });
         // 也可以修改各个按钮的属性
         choosePictrueDialog.setCancelBtnSize(16)
+                .setChoosePictrueDialogWidth(50)
+                .setBtnHeight(200)
                 .setCancelBtnColor("#40aff2")
                 .setCancelBtnText("取消");
         choosePictrueDialog.showChoosePictrueDialog();

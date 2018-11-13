@@ -158,9 +158,12 @@ public class ChoosePictrueDialog {
      */
     public ChoosePictrueDialog setBtnHeight(int pixels) {
         try {
-            localBtn.setHeight(pixels);
-            photoBtn.setHeight(pixels);
-            cancelBtn.setHeight(pixels);
+            localBtn.getLayoutParams().height = pixels;
+            photoBtn.getLayoutParams().height = pixels;
+            cancelBtn.getLayoutParams().height = pixels;
+//            localBtn.setHeight(pixels);
+//            photoBtn.setHeight(pixels);
+//            cancelBtn.setHeight(pixels);
         } catch (Exception e) {
             e.printStackTrace();
         }
