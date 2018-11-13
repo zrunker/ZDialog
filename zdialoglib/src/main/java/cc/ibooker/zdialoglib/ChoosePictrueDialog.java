@@ -29,6 +29,14 @@ public class ChoosePictrueDialog {
     private Dialog dialog;
     private Button localBtn, photoBtn, cancelBtn;
 
+    public enum ChoosePictrueDialogGravity {
+        GRAVITY_BOTTOM,
+        GRAVITY_CENTER,
+        GRAVITY_LEFT,
+        GRAVITY_RIGHT,
+        GRAVITY_TOP
+    }
+
     public Dialog getDialog() {
         return dialog;
     }
@@ -43,14 +51,6 @@ public class ChoosePictrueDialog {
 
     public Button getCancelBtn() {
         return cancelBtn;
-    }
-
-    public enum ChoosePictrueDialogGravity {
-        GRAVITY_BOTTOM,
-        GRAVITY_CENTER,
-        GRAVITY_LEFT,
-        GRAVITY_RIGHT,
-        GRAVITY_TOP
     }
 
     public ChoosePictrueDialog(@NonNull Context context) {
