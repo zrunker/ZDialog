@@ -9,6 +9,7 @@ import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ProgressBar;
 
 /**
  * 自定义进度条Dialog
@@ -17,6 +18,7 @@ import android.view.WindowManager;
 public class ProgressDialog {
     private Context context;
     private Dialog dialog;
+    private ProgressBar progressBar;
 
     public enum ProDialogGravity {
         GRAVITY_CENTER,
@@ -28,6 +30,10 @@ public class ProgressDialog {
 
     public Dialog getDialog() {
         return dialog;
+    }
+
+    public ProgressBar getProgressBar() {
+        return progressBar;
     }
 
     public ProgressDialog(@NonNull Context context) {
@@ -45,7 +51,7 @@ public class ProgressDialog {
      */
     private void init() {
         dialog.setContentView(R.layout.layout_progress_dialog2);
-
+        progressBar = dialog.findViewById(R.id.dialog_progress);
         // 按返回键是否取消
         dialog.setCancelable(true);
         // 点击Dialog外围是否取消

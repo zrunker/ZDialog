@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -21,6 +22,7 @@ import android.widget.TextView;
 public class TipDialog {
     private Context context;
     private Dialog dialog;
+    private LinearLayout topLayout;
     private TextView titleTv, descTv, ensureTv, cancelTv;
 
     public enum TipDialogGravity {
@@ -33,6 +35,10 @@ public class TipDialog {
 
     public Dialog getDialog() {
         return dialog;
+    }
+
+    public LinearLayout getTopLayout() {
+        return topLayout;
     }
 
     public TextView getTitleTv() {
@@ -66,6 +72,7 @@ public class TipDialog {
      */
     private void init() {
         dialog.setContentView(R.layout.layout_tip_dialog);
+        topLayout = dialog.findViewById(R.id.top_layout);
         titleTv = dialog.findViewById(R.id.tv_title);
         titleTv.setGravity(Gravity.CENTER);
         descTv = dialog.findViewById(R.id.tv_desc);
@@ -114,6 +121,43 @@ public class TipDialog {
     // 是否展示
     public boolean isShowing() {
         return dialog != null && dialog.isShowing();
+    }
+
+    /**
+     * 修改顶部整体显示位置
+     *
+     * @param gravity 位置
+     */
+    public TipDialog setTopLayoutGravity(int gravity) {
+        if (topLayout != null) {
+            topLayout.setGravity(gravity);
+        }
+        return this;
+    }
+
+    /**
+     * 修改顶部整体Padding - px
+     */
+    public TipDialog setTopLayoutPadding(int left, int top, int right, int bottom) {
+        if (topLayout != null) {
+            topLayout.setPadding(left, top, right, bottom);
+        }
+        return this;
+    }
+
+    /**
+     * 修改顶部整体Margin - px
+     */
+    public TipDialog setTopLayoutMargin(int leftMargin, int topMargin, int rightMargin, int bottomMargin) {
+        if (topLayout != null) {
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) topLayout.getLayoutParams();
+            layoutParams.leftMargin = leftMargin;
+            layoutParams.topMargin = topMargin;
+            layoutParams.rightMargin = rightMargin;
+            layoutParams.bottomMargin = bottomMargin;
+            topLayout.invalidate();
+        }
+        return this;
     }
 
     /**

@@ -1,12 +1,12 @@
 package cc.ibooker.zdialog;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
@@ -125,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
                 // 设置确定文本
                 .setEnsureText("确定")
                 .setTitleHeight(120)
+                // 设置整体
+                .setTopLayoutGravity(Gravity.START)
+                .setTopLayoutMargin(50, 50, 50, 50)
                 // 显示Dialog
                 .showTipDialog();
 
