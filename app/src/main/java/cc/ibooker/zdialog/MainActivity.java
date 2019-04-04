@@ -11,13 +11,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import cc.ibooker.zdialoglib.ChoosePictrueDialog;
 import cc.ibooker.zdialoglib.DelDialog;
 import cc.ibooker.zdialoglib.DiyDialog;
+import cc.ibooker.zdialoglib.PicDialog;
 import cc.ibooker.zdialoglib.ProDialog;
 import cc.ibooker.zdialoglib.ProgressDialog;
 import cc.ibooker.zdialoglib.TipDialog;
 import cc.ibooker.zdialoglib.ZDialogConstantUtil;
+import cc.ibooker.zdialoglib.bean.PicDialogBean;
 
 public class MainActivity extends AppCompatActivity {
     private ProDialog proDialog;
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private DelDialog delDialog;
     private DiyDialog diyDialog;
     private ChoosePictrueDialog choosePictrueDialog;
+    private PicDialog picDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             diyDialog.closeDiyDialog();
         if (choosePictrueDialog != null)
             choosePictrueDialog.closeChoosePictrueDialog();
+        if (picDialog != null)
+            picDialog.closePicDialog();
     }
 
     // 显示进度条Dialog
@@ -290,5 +297,15 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
         }
+    }
+
+    // 展示图片Dialog
+    public void onPicDialog(View v) {
+        picDialog = new PicDialog(this);
+        ArrayList<PicDialogBean> datas = new ArrayList<>();
+        datas.add(new PicDialogBean("选项1", "http://pic38.nipic.com/20140225/2531170_214014788000_2.jpg"));
+        datas.add(new PicDialogBean("选项2", "http://www.pptbz.com/pptpic/UploadFiles_6909/201406/2014063021281300.gif"));
+        picDialog.setDatas(datas)
+                .showPicDialog();
     }
 }

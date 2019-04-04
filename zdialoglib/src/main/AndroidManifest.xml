@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cc.ibooker.zdialoglib">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <!--用于写入数据到扩展存储卡(SD)-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 往sdcard中读取数据的权限 -->
