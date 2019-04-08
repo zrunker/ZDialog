@@ -21,6 +21,7 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
  * @author 邹峰立
  */
 public class ScaleImageView extends AppCompatImageView implements OnGlobalLayoutListener, OnScaleGestureListener, OnTouchListener {
+
     private boolean mOnce = false; // 是否为第一次加载
     /**
      * 初始化时缩放值，也是最小缩放值

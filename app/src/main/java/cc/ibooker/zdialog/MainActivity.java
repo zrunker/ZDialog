@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import cc.ibooker.zdialoglib.ChoosePictrueDialog;
 import cc.ibooker.zdialoglib.DelDialog;
 import cc.ibooker.zdialoglib.DiyDialog;
-import cc.ibooker.zdialoglib.PicDialog;
+import cc.ibooker.zdialoglib.WheelDialog;
 import cc.ibooker.zdialoglib.ProDialog;
 import cc.ibooker.zdialoglib.ProgressDialog;
 import cc.ibooker.zdialoglib.TipDialog;
 import cc.ibooker.zdialoglib.ZDialogConstantUtil;
-import cc.ibooker.zdialoglib.bean.PicDialogBean;
+import cc.ibooker.zdialoglib.bean.WheelDialogBean;
 
 public class MainActivity extends AppCompatActivity {
     private ProDialog proDialog;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private DelDialog delDialog;
     private DiyDialog diyDialog;
     private ChoosePictrueDialog choosePictrueDialog;
-    private PicDialog picDialog;
+    private WheelDialog wheelDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
             diyDialog.closeDiyDialog();
         if (choosePictrueDialog != null)
             choosePictrueDialog.closeChoosePictrueDialog();
-        if (picDialog != null)
-            picDialog.closePicDialog();
+        if (wheelDialog != null)
+            wheelDialog.closePicDialog();
     }
 
     // 显示进度条Dialog
@@ -301,11 +301,12 @@ public class MainActivity extends AppCompatActivity {
 
     // 展示图片Dialog
     public void onPicDialog(View v) {
-        picDialog = new PicDialog(this);
-        ArrayList<PicDialogBean> datas = new ArrayList<>();
-        datas.add(new PicDialogBean("选项1", "http://pic38.nipic.com/20140225/2531170_214014788000_2.jpg"));
-        datas.add(new PicDialogBean("选项2", "http://www.pptbz.com/pptpic/UploadFiles_6909/201406/2014063021281300.gif"));
-        picDialog.setDatas(datas)
+        wheelDialog = new WheelDialog(this);
+        ArrayList<WheelDialogBean> datas = new ArrayList<>();
+        datas.add(new WheelDialogBean("选项1", "http://pic38.nipic.com/20140225/2531170_214014788000_2.jpg"));
+        datas.add(new WheelDialogBean("选项2", "http://www.pptbz.com/pptpic/UploadFiles_6909/201406/2014063021281300.gif"));
+        wheelDialog.setDatas(datas)
+                .setPageIndicatorAlign(WheelDialog.PageIndicatorAlign.CENTER_HORIZONTAL)
                 .showPicDialog();
     }
 }

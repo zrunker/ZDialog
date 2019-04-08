@@ -1,14 +1,14 @@
 package cc.ibooker.zdialoglib.bean;
 
-public class PicDialogBean {
+public class WheelDialogBean {
     private String name;
     private String url;
 
-    public PicDialogBean() {
+    public WheelDialogBean() {
         super();
     }
 
-    public PicDialogBean(String name, String url) {
+    public WheelDialogBean(String name, String url) {
         this.name = name;
         this.url = url;
     }
