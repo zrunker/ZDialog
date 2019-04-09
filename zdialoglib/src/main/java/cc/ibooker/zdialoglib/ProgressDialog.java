@@ -143,7 +143,7 @@ public class ProgressDialog {
      *
      * @param proportion 和屏幕的宽度比(10代表10%) 0~100
      */
-    public ProgressDialog setDelDialogWidth(int proportion) {
+    public ProgressDialog setProDialogWidth(int proportion) {
         if (dialog != null) {
             Window window = dialog.getWindow();
             if (window != null) {

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private ChoosePictrueDialog choosePictrueDialog;
     private WheelDialog wheelDialog;
     private WheelDialog2<WheelDialogBean> wheelDialog2;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
             wheelDialog.closeWheelDialog();
         if (wheelDialog2 != null)
             wheelDialog2.closeWheelDialog2();
+        if (progressDialog != null)
+            progressDialog.closeProDialog();
     }
 
     // 显示进度条Dialog
@@ -110,10 +113,14 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
-                progressDialog.showProDialog();
+                proDialog.closeProDialog();
             }
         }, 10000);
+    }
+
+    public void onProgressDialog(View view) {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.showProDialog();
     }
 
     // 显示提示Dialog

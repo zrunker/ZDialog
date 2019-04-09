@@ -222,7 +222,7 @@ public class ProDialog {
      *
      * @param proportion 和屏幕的宽度比(10代表10%) 0~100
      */
-    public ProDialog setDelDialogWidth(int proportion) {
+    public ProDialog setProDialogWidth(int proportion) {
         if (dialog != null) {
             Window window = dialog.getWindow();
             if (window != null) {
