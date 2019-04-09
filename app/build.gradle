@@ -34,4 +34,5 @@ dependencies {
     implementation project(':zdialoglib')
     implementation 'com.github.zrunker:ZBitmap:v1.0.0'
     implementation 'com.github.zrunker:ZFile:v1.0.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

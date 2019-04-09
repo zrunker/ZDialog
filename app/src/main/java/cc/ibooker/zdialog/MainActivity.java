@@ -1,5 +1,6 @@
 package cc.ibooker.zdialog;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -9,17 +10,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import cc.ibooker.zdialoglib.ChoosePictrueDialog;
 import cc.ibooker.zdialoglib.DelDialog;
 import cc.ibooker.zdialoglib.DiyDialog;
-import cc.ibooker.zdialoglib.WheelDialog;
+import cc.ibooker.zdialoglib.Holder;
+import cc.ibooker.zdialoglib.HolderCreator;
 import cc.ibooker.zdialoglib.ProDialog;
 import cc.ibooker.zdialoglib.ProgressDialog;
+import cc.ibooker.zdialoglib.ScaleImageView;
 import cc.ibooker.zdialoglib.TipDialog;
+import cc.ibooker.zdialoglib.WheelDialog;
+import cc.ibooker.zdialoglib.WheelDialog2;
 import cc.ibooker.zdialoglib.ZDialogConstantUtil;
 import cc.ibooker.zdialoglib.bean.WheelDialogBean;
 
@@ -30,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private DiyDialog diyDialog;
     private ChoosePictrueDialog choosePictrueDialog;
     private WheelDialog wheelDialog;
+    private WheelDialog2<WheelDialogBean> wheelDialog2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
         if (choosePictrueDialog != null)
             choosePictrueDialog.closeChoosePictrueDialog();
         if (wheelDialog != null)
-            wheelDialog.closePicDialog();
+            wheelDialog.closeWheelDialog();
+        if (wheelDialog2 != null)
+            wheelDialog2.closeWheelDialog2();
     }
 
     // 显示进度条Dialog
@@ -300,13 +311,57 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // 展示图片Dialog
-    public void onPicDialog(View v) {
+    public void onWheelDialog(View v) {
         wheelDialog = new WheelDialog(this);
         ArrayList<WheelDialogBean> datas = new ArrayList<>();
         datas.add(new WheelDialogBean("选项1", "http://pic38.nipic.com/20140225/2531170_214014788000_2.jpg"));
         datas.add(new WheelDialogBean("选项2", "http://www.pptbz.com/pptpic/UploadFiles_6909/201406/2014063021281300.gif"));
+        datas.add(new WheelDialogBean("选项3", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554738709986&di=90d889de1910eeae0f26c9a65d583435&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fblog%2F201401%2F16%2F20140116125541_ZkGAw.thumb.200_200_c.gif"));
         wheelDialog.setDatas(datas)
                 .setPageIndicatorAlign(WheelDialog.PageIndicatorAlign.CENTER_HORIZONTAL)
-                .showPicDialog();
+                .showWheelDialog();
+    }
+
+    // 展示轮播Dialog
+    ArrayList<WheelDialogBean> datas = new ArrayList<>();
+
+    public void onWheelDialog2(final View v) {
+        wheelDialog2 = new WheelDialog2<>(this);
+
+        datas.add(new WheelDialogBean("选项1", "http://pic38.nipic.com/20140225/2531170_214014788000_2.jpg"));
+        datas.add(new WheelDialogBean("选项2", "http://www.pptbz.com/pptpic/UploadFiles_6909/201406/2014063021281300.gif"));
+        datas.add(new WheelDialogBean("选项3", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554738709986&di=90d889de1910eeae0f26c9a65d583435&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fblog%2F201401%2F16%2F20140116125541_ZkGAw.thumb.200_200_c.gif"));
+
+        wheelDialog2.init(new HolderCreator() {
+            @Override
+            public Object createHolder() {
+                return new ViewHolder();
+            }
+        }, datas)
+                .showWheelDialog2();
+    }
+
+    class ViewHolder implements Holder<WheelDialogBean> {
+        private LayoutInflater inflater;
+        private ScaleImageView imageView;
+        private TextView textView;
+
+        @Override
+        public View createView(Context context) {
+            inflater = LayoutInflater.from(context);
+            View view = inflater.inflate(R.layout.layout_wheel2_item, null);
+            imageView = view.findViewById(R.id.scaleImageView);
+            textView = view.findViewById(R.id.textView);
+            return view;
+        }
+
+        @Override
+        public void updateUI(Context context, int position, WheelDialogBean data) {
+            WheelDialogBean wheelDialogBean = datas.get(position);
+            Picasso.get()
+                    .load(wheelDialogBean.getUrl())
+                    .into(imageView);
+            textView.setText(wheelDialogBean.getName());
+        }
     }
 }

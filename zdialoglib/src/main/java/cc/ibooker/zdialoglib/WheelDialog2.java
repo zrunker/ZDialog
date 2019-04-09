@@ -2,24 +2,18 @@ package cc.ibooker.zdialoglib;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import java.util.ArrayList;
-
-import cc.ibooker.zdialoglib.bean.WheelDialogBean;
+import java.util.List;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -29,14 +23,13 @@ import static android.view.View.VISIBLE;
  *
  * @author 邹峰立
  */
-public class WheelDialog {
+public class WheelDialog2<T> {
     private Context context;
     private Dialog dialog;
     private ViewPager viewPager;
-    private WheelPagerAdapter wheelPagerAdapter;
+    private WheelPagerAdapter2<T> wheelPagerAdapter;
     private LinearLayout dotLayout;
-    private TextView textView;
-    private ArrayList<WheelDialogBean> mDatas;
+    private List<T> mDatas;
     private int selectedRes, defalutRes;
     private ImageView[] mImageViews;
     private boolean isIndicatorVisible = true;// 标记指示器是否可见
@@ -61,31 +54,22 @@ public class WheelDialog {
         this.dotLayout = dotLayout;
     }
 
-    public TextView getTextView() {
-        return textView;
-    }
-
-    public void setTextView(TextView textView) {
-        this.textView = textView;
-    }
-
-    public WheelDialog(@NonNull Context context) {
+    public WheelDialog2(@NonNull Context context) {
         this(context, R.style.translucentDialog);
     }
 
-    public WheelDialog(@NonNull Context context, @StyleRes int themeResId) {
+    public WheelDialog2(@NonNull Context context, @StyleRes int themeResId) {
         this.dialog = new Dialog(context, themeResId);
         this.context = context;
-        init();
+        initView();
     }
 
     // 初始化
-    private void init() {
-        dialog.setContentView(R.layout.layout_wheel_dialog);
+    private void initView() {
+        dialog.setContentView(R.layout.layout_wheel_dialog2);
 
         viewPager = dialog.findViewById(R.id.viewPager);
         dotLayout = dialog.findViewById(R.id.dotLayout);
-        textView = dialog.findViewById(R.id.textView);
 
         // 按返回键是否取消
         dialog.setCancelable(true);
@@ -95,54 +79,51 @@ public class WheelDialog {
         setWheelDialogWidth(100);
     }
 
-    // 设置数据
-    public WheelDialog setDatas(final ArrayList<WheelDialogBean> datas) {
-        if (datas != null && datas.size() > 0) {
-            mDatas = datas;
-            textView.setText(datas.get(0).getName());
-            viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+    /**
+     * ViewPager设置Adapter，初始化数据
+     *
+     * @param holderCreator ViewHolder构造类
+     * @param datas         数据源
+     */
+    public WheelDialog2 init(HolderCreator holderCreator, final List<T> datas) {
+        this.mDatas = datas;
+        // 设置Adapter
+        if (wheelPagerAdapter == null) {
+            wheelPagerAdapter = new WheelPagerAdapter2<>(holderCreator, mDatas);
+            viewPager.setAdapter(wheelPagerAdapter);
+        } else {
+            wheelPagerAdapter.reflushData(holderCreator, mDatas);
+        }
+        // 添加监听
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
-                @Override
-                public void onPageScrolled(int i, float v, int i1) {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
 
-                }
+            }
 
-                @Override
-                public void onPageSelected(int position) {
-                    if (isIndicatorVisible && datas.size() > position && position >= 0) {
-                        textView.setText(datas.get(position).getName());
-                        if (mImageViews != null) {
-                            for (int i = 0; i < mImageViews.length; i++) {
-                                mImageViews[position].setBackgroundResource(selectedRes);
-                                if (position != i) {
-                                    mImageViews[i].setBackgroundResource(defalutRes);
-                                }
+            @Override
+            public void onPageSelected(int position) {
+                if (isIndicatorVisible && datas.size() > position && position >= 0) {
+                    if (mImageViews != null) {
+                        for (int i = 0; i < mImageViews.length; i++) {
+                            mImageViews[position].setBackgroundResource(selectedRes);
+                            if (position != i) {
+                                mImageViews[i].setBackgroundResource(defalutRes);
                             }
                         }
                     }
                 }
+            }
 
-                @Override
-                public void onPageScrollStateChanged(int i) {
+            @Override
+            public void onPageScrollStateChanged(int i) {
 
-                }
-            });
-            // 初始化viewPager
-            setWheelPagerAdapter(datas);
-            // 初始化dotLayout
-            setPageIndicator(R.drawable.bg_dot_cccccc_8, R.drawable.bg_dot_3e3e3e_8);
-        }
+            }
+        });
+        // 初始化dotLayout
+        setPageIndicator(R.drawable.bg_dot_cccccc_8, R.drawable.bg_dot_3e3e3e_8);
         return this;
-    }
-
-    // 自定义setPicPagerAdapter
-    private void setWheelPagerAdapter(ArrayList<WheelDialogBean> datas) {
-        if (wheelPagerAdapter == null) {
-            wheelPagerAdapter = new WheelPagerAdapter(context, datas);
-            viewPager.setAdapter(wheelPagerAdapter);
-        } else {
-            wheelPagerAdapter.reflushData(datas);
-        }
     }
 
     /**
@@ -151,7 +132,7 @@ public class WheelDialog {
      * @param selectedRes 选中图标地址
      * @param defalutRes  未选中图标地址
      */
-    public WheelDialog setPageIndicator(int selectedRes, int defalutRes) {
+    public WheelDialog2 setPageIndicator(int selectedRes, int defalutRes) {
         this.selectedRes = selectedRes;
         this.defalutRes = defalutRes;
         if (mDatas != null && mDatas.size() > 0) {
@@ -182,7 +163,7 @@ public class WheelDialog {
      *
      * @param align 三个方向：居左 ，居中 ，居右
      */
-    public WheelDialog setPageIndicatorAlign(PageIndicatorAlign align) {
+    public WheelDialog2 setPageIndicatorAlign(PageIndicatorAlign align) {
         if (align == PageIndicatorAlign.ALIGN_PARENT_LEFT) {
             dotLayout.setGravity(Gravity.START);
         } else if (align == PageIndicatorAlign.ALIGN_PARENT_RIGHT) {
@@ -198,7 +179,7 @@ public class WheelDialog {
      *
      * @param isVisible true 可见  false 不可见 默认true
      */
-    public WheelDialog setPointViewVisible(boolean isVisible) {
+    public WheelDialog2 setPointViewVisible(boolean isVisible) {
         if (dotLayout != null) {
             isIndicatorVisible = isVisible;
             dotLayout.setVisibility(isVisible ? VISIBLE : GONE);
@@ -216,7 +197,7 @@ public class WheelDialog {
      *
      * @param proportion 和屏幕的宽度比(10代表10%) 0~100
      */
-    public WheelDialog setWheelDialogWidth(int proportion) {
+    public WheelDialog2 setWheelDialogWidth(int proportion) {
         if (dialog != null) {
             Window window = dialog.getWindow();
             if (window != null) {
@@ -233,7 +214,7 @@ public class WheelDialog {
      *
      * @param cancelable true 取消 false 不取消  默认true
      */
-    public WheelDialog setCancelable(boolean cancelable) {
+    public WheelDialog2 setCancelable(boolean cancelable) {
         if (dialog != null)
             dialog.setCancelable(cancelable);
         return this;
@@ -244,7 +225,7 @@ public class WheelDialog {
      *
      * @param wheelDialogGravity 左上右下中
      */
-    public WheelDialog setWheelDialogGravity(WheelDialogGravity wheelDialogGravity) {
+    public WheelDialog2 setWheelDialogGravity(WheelDialogGravity wheelDialogGravity) {
         Window window = dialog.getWindow();
         int gravity = Gravity.CENTER;
         if (wheelDialogGravity == WheelDialogGravity.GRAVITY_BOTTOM) {
@@ -268,7 +249,7 @@ public class WheelDialog {
      *
      * @param dimAmount 0~1
      */
-    public WheelDialog setDimAmount(float dimAmount) {
+    public WheelDialog2 setDimAmount(float dimAmount) {
         Window window = dialog.getWindow();
         if (window != null) {
             WindowManager.LayoutParams lp = window.getAttributes();
@@ -284,7 +265,7 @@ public class WheelDialog {
      *
      * @param style R文件
      */
-    public WheelDialog setWindowAnimations(int style) {
+    public WheelDialog2 setWindowAnimations(int style) {
         if (dialog != null) {
             Window window = dialog.getWindow();
             if (window != null) {
@@ -299,7 +280,7 @@ public class WheelDialog {
      *
      * @param cancelable true 取消 false 不取消  默认true
      */
-    public WheelDialog setCanceledOnTouchOutside(boolean cancelable) {
+    public WheelDialog2 setCanceledOnTouchOutside(boolean cancelable) {
         if (dialog != null)
             dialog.setCanceledOnTouchOutside(cancelable);
         return this;
@@ -308,7 +289,7 @@ public class WheelDialog {
     /**
      * 修改游标整体Padding - px
      */
-    public WheelDialog setDotLayoutPadding(int left, int top, int right, int bottom) {
+    public WheelDialog2 setDotLayoutPadding(int left, int top, int right, int bottom) {
         if (dotLayout != null) {
             dotLayout.setPadding(left, top, right, bottom);
         }
@@ -318,7 +299,7 @@ public class WheelDialog {
     /**
      * 修改游标整体Margin - px
      */
-    public WheelDialog setDotLayoutMargin(int leftMargin, int topMargin, int rightMargin, int bottomMargin) {
+    public WheelDialog2 setDotLayoutMargin(int leftMargin, int topMargin, int rightMargin, int bottomMargin) {
         if (dotLayout != null) {
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) dotLayout.getLayoutParams();
             layoutParams.leftMargin = leftMargin;
@@ -331,63 +312,9 @@ public class WheelDialog {
     }
 
     /**
-     * 修改TextView整体Padding - px
-     */
-    public WheelDialog setTextViewPadding(int left, int top, int right, int bottom) {
-        if (textView != null) {
-            textView.setPadding(left, top, right, bottom);
-        }
-        return this;
-    }
-
-    /**
-     * 修改TextView整体Margin - px
-     */
-    public WheelDialog setTextViewMargin(int leftMargin, int topMargin, int rightMargin, int bottomMargin) {
-        if (textView != null) {
-            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) textView.getLayoutParams();
-            layoutParams.leftMargin = leftMargin;
-            layoutParams.topMargin = topMargin;
-            layoutParams.rightMargin = rightMargin;
-            layoutParams.bottomMargin = bottomMargin;
-            textView.invalidate();
-        }
-        return this;
-    }
-
-    /**
-     * 修改TextView字体大小
-     *
-     * @param textSize 字体大小
-     */
-    public WheelDialog setTextViewSize(int textSize) {
-        if (textView != null) {
-            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
-        }
-        return this;
-    }
-
-    /**
-     * 修改TextView字体颜色
-     *
-     * @param color 字体颜色 16进制
-     */
-    public WheelDialog setTextViewColorColor(String color) {
-        try {
-            if (textView != null && !TextUtils.isEmpty(color)) {
-                textView.setTextColor(Color.parseColor(color));
-                textView.invalidate();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return this;
-    }
-
-    /**
      * 展示Dialog
      */
-    public void showWheelDialog() {
+    public void showWheelDialog2() {
         if (dialog != null)
             dialog.show();
     }
@@ -395,7 +322,7 @@ public class WheelDialog {
     /**
      * 关闭Dialog
      */
-    public void closeWheelDialog() {
+    public void closeWheelDialog2() {
         if (dialog != null)
             dialog.cancel();
     }

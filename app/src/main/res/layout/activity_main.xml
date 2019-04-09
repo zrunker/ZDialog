@@ -55,7 +55,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@android:color/holo_blue_light"
-        android:onClick="onPicDialog"
+        android:onClick="onWheelDialog"
         android:padding="5dp"
-        android:text="PicDialog" />
+        android:text="wheelDialog" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="onWheelDialog2"
+        android:padding="5dp"
+        android:text="wheelDialog2" />
 </LinearLayout>
