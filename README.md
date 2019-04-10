@@ -40,8 +40,10 @@ dependencies {
 #### 二、应用：
 
 ##### 1.1、进度条ProDialog：
+
 **A、效果图**
 ![图片描述](http://www.ibookerfile.cc/upload/images/acontents/1_1554811149344acontentimage.gif)
+
 **B、在Activity中的代码实现**
 ```
 // 初始化ProDialog
@@ -151,7 +153,9 @@ public void closeProDialog();
 
 ##### 1.2、进度条ProgressDialog：
 **A、效果图**
+
 ![图片描述](http://www.ibookerfile.cc/upload/images/acontents/1_1554812676000acontentimage.gif)
+
 **B、在Activity中的代码实现**
 ```
 // 初始化ProgressDialog
@@ -198,7 +202,9 @@ ProgressDialog.setWindowAnimations(int style);
 
 ##### 2、提示TipDialog：
 **A、效果图**
+
 ![图片描述](http://www.ibookerfile.cc/upload/images/acontents/1_1554813421938acontentimage.gif)
+
 **B、在Activity中的代码实现**
 ```
 // 初始化TipDialog
@@ -396,7 +402,9 @@ public void closeTipDialog();
 ```
 ##### 3、删除DelDialog：
 **A、效果图**
+
 ![图片描述](http://www.ibookerfile.cc/upload/images/acontents/1_1554861343516acontentimage.gif)
+
 **B、在Activity中的代码实现**
 ```
 // 初始化DelDialog
@@ -502,7 +510,9 @@ public void closeDelDialog();
 
 ##### 4、自定义布局DiyDialog：
 **A、效果图**
+
 ![图片描述](http://www.ibookerfile.cc/upload/images/acontents/1_1554862413594acontentimage.gif)
+
 **B、在Activity中的代码实现**
 ```
 // 初始化DiyDialog
@@ -583,7 +593,9 @@ public void closeDiyDialog();
 
 ##### 5、图片选择ChoosePictrueDialog：
 **A、效果图**
+
 ![图片描述](http://www.ibookerfile.cc/upload/images/acontents/1_1554865767453acontentimage.gif)
+
 **B、在Activity中的代码实现**
 ```
 // 初始化ChoosePictrueDialog
@@ -704,7 +716,9 @@ public void closeChoosePictrueDialog();
 
 ##### 6、轮播WheelDialog：
 **A、效果图**
+
 ![图片描述](http://www.ibookerfile.cc/upload/images/acontents/1_1554871564875acontentimage.gif)
+
 **B、在Activity中的代码实现**
 ```
 // 初始化WheelDialog
@@ -796,7 +810,9 @@ public void closeWheelDialog();
 
 ##### 7、轮播WheelDialog2：
 **A、效果图**
+
 ![图片描述](http://www.ibookerfile.cc/upload/images/acontents/1_1554880213797acontentimage.gif)
+
 **B、在Activity中的代码实现**
 ```
 // 展示轮播Dialog相关数据集
