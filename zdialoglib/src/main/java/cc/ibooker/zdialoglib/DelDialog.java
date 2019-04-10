@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -105,7 +106,7 @@ public class DelDialog {
      */
     public DelDialog setDelBtnSize(float size) {
         if (delBtn != null)
-            delBtn.setTextSize(size);
+            delBtn.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
         return this;
     }
 
@@ -131,14 +132,14 @@ public class DelDialog {
      */
     public DelDialog setCancelBtnSize(float size) {
         if (cancelBtn != null)
-            cancelBtn.setTextSize(size);
+            cancelBtn.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
         return this;
     }
 
     /**
      * 设置CancelBtn文字颜色
      *
-     * @param color 文字颜色
+     * @param color 文字颜色 16进制
      */
     public DelDialog setCancelBtnColor(String color) {
         try {

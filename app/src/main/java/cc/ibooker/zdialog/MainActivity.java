@@ -261,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
     // 图片选择
     public void onDiyChoosePictrueDialog(View view) {
         choosePictrueDialog = new ChoosePictrueDialog(this);
-        // 也可以自定义各个按钮的点击事件
+//        // 也可以自定义各个按钮的点击事件
 //        choosePictrueDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
 //            @Override
 //            public void onCancel(DialogInterface dialog) {
@@ -285,8 +285,8 @@ public class MainActivity extends AppCompatActivity {
                 .setChoosePictrueDialogWidth(50)
                 .setBtnHeight(200)
                 .setCancelBtnColor("#40aff2")
-                .setCancelBtnText("取消");
-        choosePictrueDialog.showChoosePictrueDialog();
+                .setCancelBtnText("取消")
+                .showChoosePictrueDialog();
     }
 
     @Override
@@ -324,7 +324,7 @@ public class MainActivity extends AppCompatActivity {
         datas.add(new WheelDialogBean("选项1", "http://pic38.nipic.com/20140225/2531170_214014788000_2.jpg"));
         datas.add(new WheelDialogBean("选项2", "http://www.pptbz.com/pptpic/UploadFiles_6909/201406/2014063021281300.gif"));
         datas.add(new WheelDialogBean("选项3", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554738709986&di=90d889de1910eeae0f26c9a65d583435&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fblog%2F201401%2F16%2F20140116125541_ZkGAw.thumb.200_200_c.gif"));
-        wheelDialog.setDatas(datas)
+        wheelDialog.setDatas(datas, "http://www.pptbz.com/pptpic/UploadFiles_6909/201406/2014063021281300.gif")
                 .setPageIndicatorAlign(WheelDialog.PageIndicatorAlign.CENTER_HORIZONTAL)
                 .showWheelDialog();
     }
@@ -335,6 +335,9 @@ public class MainActivity extends AppCompatActivity {
     public void onWheelDialog2(final View v) {
         wheelDialog2 = new WheelDialog2<>(this);
 
+        if (datas == null)
+            datas = new ArrayList<>();
+        datas.clear();
         datas.add(new WheelDialogBean("选项1", "http://pic38.nipic.com/20140225/2531170_214014788000_2.jpg"));
         datas.add(new WheelDialogBean("选项2", "http://www.pptbz.com/pptpic/UploadFiles_6909/201406/2014063021281300.gif"));
         datas.add(new WheelDialogBean("选项3", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554738709986&di=90d889de1910eeae0f26c9a65d583435&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fblog%2F201401%2F16%2F20140116125541_ZkGAw.thumb.200_200_c.gif"));
@@ -344,7 +347,7 @@ public class MainActivity extends AppCompatActivity {
             public Object createHolder() {
                 return new ViewHolder();
             }
-        }, datas)
+        }, datas, 1)
                 .showWheelDialog2();
     }
 

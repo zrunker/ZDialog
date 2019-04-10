@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -129,7 +130,15 @@ public class TipDialog {
      * @param gravity 位置
      */
     public TipDialog setTopLayoutGravity(int gravity) {
-        if (topLayout != null) {
+        if (topLayout != null
+                && (gravity == Gravity.CENTER_HORIZONTAL
+                || gravity == Gravity.CENTER
+                || gravity == Gravity.BOTTOM
+                || gravity == Gravity.TOP
+                || gravity == Gravity.START
+                || gravity == Gravity.END
+                || gravity == Gravity.CENTER_VERTICAL
+                || gravity == Gravity.NO_GRAVITY)) {
             topLayout.setGravity(gravity);
         }
         return this;
@@ -165,7 +174,7 @@ public class TipDialog {
      *
      * @param text 文字内容
      */
-    public TipDialog setTitleText(String text) {
+    public TipDialog setTitleText(CharSequence text) {
         if (titleTv != null && !TextUtils.isEmpty(text)) {
             titleTv.setText(text);
             titleTv.invalidate();
@@ -180,7 +189,7 @@ public class TipDialog {
      */
     public TipDialog setTitleTextSize(int size) {
         if (titleTv != null) {
-            titleTv.setTextSize(size);
+            titleTv.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
             titleTv.invalidate();
         }
         return this;
@@ -238,7 +247,15 @@ public class TipDialog {
      * @param gravity 位置
      */
     public TipDialog setTitleGravity(int gravity) {
-        if (titleTv != null) {
+        if (titleTv != null
+                && (gravity == Gravity.CENTER_HORIZONTAL
+                || gravity == Gravity.CENTER
+                || gravity == Gravity.BOTTOM
+                || gravity == Gravity.TOP
+                || gravity == Gravity.START
+                || gravity == Gravity.END
+                || gravity == Gravity.CENTER_VERTICAL
+                || gravity == Gravity.NO_GRAVITY)) {
             titleTv.setGravity(gravity);
         }
         return this;
@@ -249,7 +266,7 @@ public class TipDialog {
      *
      * @param text 文字内容
      */
-    public TipDialog setDescText(String text) {
+    public TipDialog setDescText(CharSequence text) {
         if (descTv != null && !TextUtils.isEmpty(text)) {
             descTv.setText(text);
             descTv.invalidate();
@@ -264,7 +281,7 @@ public class TipDialog {
      */
     public TipDialog setDescTextSize(int size) {
         if (descTv != null) {
-            descTv.setTextSize(size);
+            descTv.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
             descTv.invalidate();
         }
         return this;
@@ -273,7 +290,7 @@ public class TipDialog {
     /**
      * 修改描述文字颜色
      *
-     * @param color 文字颜色
+     * @param color 文字颜色 16进制
      */
     public TipDialog setDescColor(String color) {
         try {
@@ -318,7 +335,15 @@ public class TipDialog {
      * @param gravity 位置
      */
     public TipDialog setDescGravity(int gravity) {
-        if (descTv != null) {
+        if (descTv != null
+                && (gravity == Gravity.CENTER_HORIZONTAL
+                || gravity == Gravity.CENTER
+                || gravity == Gravity.BOTTOM
+                || gravity == Gravity.TOP
+                || gravity == Gravity.START
+                || gravity == Gravity.END
+                || gravity == Gravity.CENTER_VERTICAL
+                || gravity == Gravity.NO_GRAVITY)) {
             descTv.setGravity(gravity);
         }
         return this;
@@ -329,7 +354,7 @@ public class TipDialog {
      *
      * @param text 文字内容
      */
-    public TipDialog setEnsureText(String text) {
+    public TipDialog setEnsureText(CharSequence text) {
         if (ensureTv != null && !TextUtils.isEmpty(text)) {
             ensureTv.setText(text);
             ensureTv.invalidate();
@@ -344,7 +369,7 @@ public class TipDialog {
      */
     public TipDialog setEnsureTextSize(int size) {
         if (ensureTv != null) {
-            ensureTv.setTextSize(size);
+            ensureTv.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
             ensureTv.invalidate();
         }
         return this;
@@ -353,7 +378,7 @@ public class TipDialog {
     /**
      * 修改确定文字颜色
      *
-     * @param color 文字颜色
+     * @param color 文字颜色 16进制
      */
     public TipDialog setEnsureColor(String color) {
         try {
@@ -386,7 +411,15 @@ public class TipDialog {
      * @param gravity 位置
      */
     public TipDialog setEnsureGravity(int gravity) {
-        if (ensureTv != null) {
+        if (ensureTv != null
+                && (gravity == Gravity.CENTER_HORIZONTAL
+                || gravity == Gravity.CENTER
+                || gravity == Gravity.BOTTOM
+                || gravity == Gravity.TOP
+                || gravity == Gravity.START
+                || gravity == Gravity.END
+                || gravity == Gravity.CENTER_VERTICAL
+                || gravity == Gravity.NO_GRAVITY)) {
             ensureTv.setGravity(gravity);
         }
         return this;
@@ -397,7 +430,7 @@ public class TipDialog {
      *
      * @param text 文字内容
      */
-    public TipDialog setCancelText(String text) {
+    public TipDialog setCancelText(CharSequence text) {
         if (cancelTv != null && !TextUtils.isEmpty(text)) {
             cancelTv.setText(text);
             cancelTv.invalidate();
@@ -412,7 +445,7 @@ public class TipDialog {
      */
     public TipDialog setCancelTextSize(int size) {
         if (cancelTv != null) {
-            cancelTv.setTextSize(size);
+            cancelTv.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
             cancelTv.invalidate();
         }
         return this;
@@ -454,7 +487,15 @@ public class TipDialog {
      * @param gravity 位置
      */
     public TipDialog setCancelGravity(int gravity) {
-        if (cancelTv != null) {
+        if (cancelTv != null
+                && (gravity == Gravity.CENTER_HORIZONTAL
+                || gravity == Gravity.CENTER
+                || gravity == Gravity.BOTTOM
+                || gravity == Gravity.TOP
+                || gravity == Gravity.START
+                || gravity == Gravity.END
+                || gravity == Gravity.CENTER_VERTICAL
+                || gravity == Gravity.NO_GRAVITY)) {
             cancelTv.setGravity(gravity);
         }
         return this;
