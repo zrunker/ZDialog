@@ -3,6 +3,7 @@ package cc.ibooker.zdialoglib;
 /**
  * 常量管理类
  * Created by 邹峰立 on 2017/7/10.
+ * https://github.com/zrunker/ZDialog
  */
 public class ZDialogConstantUtil {
     public static final int PERMISSION_CAMERA_REQUEST_CODE = 222;// 拍照权限请求码

@@ -15,6 +15,7 @@ import java.io.File;
 /**
  * 选择图片管理类
  * Created by 邹峰立 on 2017/7/10.
+ * https://github.com/zrunker/ZDialog
  */
 public class ChoosePictrueUtil {
     public static Uri photoUri;// 拍照URI，拍照相对于新生产的，所有要进行转换

@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 /**
  * 自定义进度条Dialog
  * Created by 邹峰立 on 2017/7/5.
+ * https://github.com/zrunker/ZDialog
  */
 public class ProgressDialog {
     private Context context;

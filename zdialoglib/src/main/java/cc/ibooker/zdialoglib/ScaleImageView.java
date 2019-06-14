@@ -19,6 +19,7 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
  * 自定义可以缩放的ImageView
  *
  * @author 邹峰立
+ * https://github.com/zrunker/ZDialog
  */
 public class ScaleImageView extends AppCompatImageView implements OnGlobalLayoutListener, OnScaleGestureListener, OnTouchListener {
 

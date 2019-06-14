@@ -24,6 +24,7 @@ import android.widget.Button;
 /**
  * 选择图片Dialog
  * Created by 邹峰立 on 2017/7/10.
+ * https://github.com/zrunker/ZDialog
  */
 public class ChoosePictrueDialog {
     private Context context;

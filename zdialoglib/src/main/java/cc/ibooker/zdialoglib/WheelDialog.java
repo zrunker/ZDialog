@@ -29,6 +29,7 @@ import static android.view.View.VISIBLE;
  * 查看图片Dialog
  *
  * @author 邹峰立
+ * https://github.com/zrunker/ZDialog
  */
 public class WheelDialog {
     private Context context;

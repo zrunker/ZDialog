@@ -2,6 +2,7 @@ package cc.ibooker.zdialoglib;
 
 /**
  * 点击事件处理
+ * https://github.com/zrunker/ZDialog
  */
 public class ZDialogClickUtil {
     private static long lastClickTime;

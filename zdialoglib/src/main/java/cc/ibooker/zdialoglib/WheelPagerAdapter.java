@@ -18,6 +18,7 @@ import cc.ibooker.zdialoglib.bean.WheelDialogBean;
  * 轮播适配器
  *
  * @author 邹峰立
+ * https://github.com/zrunker/ZDialog
  */
 public class WheelPagerAdapter extends PagerAdapter {
     private Context context;

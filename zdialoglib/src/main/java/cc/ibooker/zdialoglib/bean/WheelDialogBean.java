@@ -1,5 +1,9 @@
 package cc.ibooker.zdialoglib.bean;
 
+/**
+ * 轮播Dialog相关数据
+ * https://github.com/zrunker/ZDialog
+ */
 public class WheelDialogBean {
     private String name;
     private String url;

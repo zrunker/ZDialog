@@ -19,6 +19,7 @@ import android.widget.TextView;
 /**
  * 提示Dialog
  * Created by 邹峰立 on 2017/7/5.
+ * https://github.com/zrunker/ZDialog
  */
 public class TipDialog {
     private Context context;

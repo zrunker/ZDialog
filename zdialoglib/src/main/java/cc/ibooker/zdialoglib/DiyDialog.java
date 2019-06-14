@@ -14,6 +14,7 @@ import android.view.WindowManager;
 /**
  * 自定义Dialog
  * Created by 邹峰立 on 2017/7/6.
+ * https://github.com/zrunker/ZDialog
  */
 public class DiyDialog {
     private Context context;

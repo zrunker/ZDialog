@@ -12,6 +12,7 @@ import java.util.List;
  * 轮播适配器
  *
  * @author 邹峰立
+ * https://github.com/zrunker/ZDialog
  */
 public class WheelPagerAdapter2<T> extends PagerAdapter {
     private List<T> mDatas;
