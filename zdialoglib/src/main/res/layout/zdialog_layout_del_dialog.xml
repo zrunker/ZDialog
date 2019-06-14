@@ -16,7 +16,7 @@
         android:paddingRight="20dp"
         android:paddingStart="20dp"
         android:paddingTop="13dp"
-        android:text="@string/delete"
+        android:text="@string/ZDialogLib_delete"
         android:textColor="#555555"
         android:textSize="16sp" />
 
@@ -37,7 +37,7 @@
         android:paddingRight="20dp"
         android:paddingStart="20dp"
         android:paddingTop="13dp"
-        android:text="@string/cancel"
+        android:text="@string/ZDialogLib_cancel"
         android:textColor="#555555"
         android:textSize="16sp" />
 

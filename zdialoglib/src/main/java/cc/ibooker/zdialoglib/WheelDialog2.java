@@ -60,7 +60,7 @@ public class WheelDialog2<T> {
     }
 
     public WheelDialog2(@NonNull Context context) {
-        this(context, R.style.translucentDialog);
+        this(context, R.style.zdialog_translucentDialog);
     }
 
     public WheelDialog2(@NonNull Context context, @StyleRes int themeResId) {
@@ -71,7 +71,7 @@ public class WheelDialog2<T> {
 
     // 初始化
     private void initView() {
-        dialog.setContentView(R.layout.layout_wheel_dialog2);
+        dialog.setContentView(R.layout.zdialog_layout_wheel_dialog2);
 
         viewPager = dialog.findViewById(R.id.viewPager);
         dotLayout = dialog.findViewById(R.id.dotLayout);
@@ -128,7 +128,7 @@ public class WheelDialog2<T> {
             }
         });
         // 初始化dotLayout
-        setPageIndicator(R.drawable.bg_dot_cccccc_8, R.drawable.bg_dot_3e3e3e_8);
+        setPageIndicator(R.drawable.zdialog_bg_dot_cccccc_8, R.drawable.zdialog_bg_dot_3e3e3e_8);
         // 设置当前页
         if (currentPosition > 0 && currentPosition < datas.size())
             viewPager.setCurrentItem(currentPosition);

@@ -92,7 +92,7 @@ public class WheelPagerAdapter extends PagerAdapter {
             View view = mViews[position];
             final ViewHolder viewHolder;
             if (view == null) {
-                view = inflater.inflate(R.layout.layout_wheel_dialog_item, container, false);
+                view = inflater.inflate(R.layout.zdialog_layout_wheel_dialog_item, container, false);
                 viewHolder = new ViewHolder();
                 viewHolder.scaleImageView = view.findViewById(R.id.scaleImageView);
                 view.setTag(viewHolder);

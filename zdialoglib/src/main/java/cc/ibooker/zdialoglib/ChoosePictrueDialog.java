@@ -55,7 +55,7 @@ public class ChoosePictrueDialog {
     }
 
     public ChoosePictrueDialog(@NonNull Context context) {
-        this(context, R.style.diydialog);
+        this(context, R.style.zdialog_diyDialog);
         this.context = context;
     }
 
@@ -69,7 +69,7 @@ public class ChoosePictrueDialog {
      * 初始化
      */
     private void init() {
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_choose_pictrue, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.zdialog_layout_choose_pictrue, null);
         localBtn = view.findViewById(R.id.btn_local);
         localBtn.setOnClickListener(new View.OnClickListener() {
             @Override

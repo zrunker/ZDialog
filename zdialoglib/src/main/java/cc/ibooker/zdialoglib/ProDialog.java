@@ -52,7 +52,7 @@ public class ProDialog {
     }
 
     public ProDialog(@NonNull Context context) {
-        this(context, R.style.proDialog);
+        this(context, R.style.zdialog_proDialog);
     }
 
     public ProDialog(@NonNull Context context, @StyleRes int themeResId) {
@@ -65,7 +65,7 @@ public class ProDialog {
      * 初始化控件
      */
     private void init() {
-        dialog.setContentView(R.layout.layout_progress_dialog);
+        dialog.setContentView(R.layout.zdialog_layout_progress_dialog);
 
         imageView = dialog.findViewById(R.id.dialog_statue);
         imageView.setVisibility(View.GONE);

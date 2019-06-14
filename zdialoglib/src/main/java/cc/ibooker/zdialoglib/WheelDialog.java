@@ -75,7 +75,7 @@ public class WheelDialog {
     }
 
     public WheelDialog(@NonNull Context context) {
-        this(context, R.style.translucentDialog);
+        this(context, R.style.zdialog_translucentDialog);
     }
 
     public WheelDialog(@NonNull Context context, @StyleRes int themeResId) {
@@ -86,7 +86,7 @@ public class WheelDialog {
 
     // 初始化
     private void init() {
-        dialog.setContentView(R.layout.layout_wheel_dialog);
+        dialog.setContentView(R.layout.zdialog_layout_wheel_dialog);
 
         viewPager = dialog.findViewById(R.id.viewPager);
         dotLayout = dialog.findViewById(R.id.dotLayout);
@@ -135,7 +135,7 @@ public class WheelDialog {
             // 初始化viewPager
             setWheelPagerAdapter(datas);
             // 初始化dotLayout
-            setPageIndicator(R.drawable.bg_dot_cccccc_8, R.drawable.bg_dot_3e3e3e_8);
+            setPageIndicator(R.drawable.zdialog_bg_dot_cccccc_8, R.drawable.zdialog_bg_dot_3e3e3e_8);
             // 设置缓存
             viewPager.setOffscreenPageLimit(datas.size());
             // 设置当前页

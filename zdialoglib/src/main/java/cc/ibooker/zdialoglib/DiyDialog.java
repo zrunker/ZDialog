@@ -32,7 +32,7 @@ public class DiyDialog {
     }
 
     public DiyDialog(@NonNull Context context, @NonNull View view) {
-        this(context, R.style.diydialog, view);
+        this(context, R.style.zdialog_diyDialog, view);
     }
 
     public DiyDialog(@NonNull Context context, @StyleRes int themeResId, @NonNull View view) {

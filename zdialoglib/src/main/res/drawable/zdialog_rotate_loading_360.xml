@@ -8,6 +8,6 @@
     <bitmap
         android:antialias="true"
         android:filter="true"
-        android:src="@drawable/loading" />
+        android:src="@drawable/zdialog_loading" />
 
 </rotate>

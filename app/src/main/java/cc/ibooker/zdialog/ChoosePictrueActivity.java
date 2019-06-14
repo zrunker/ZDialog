@@ -48,7 +48,7 @@ public class ChoosePictrueActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choosepictrue);
+        setContentView(R.layout.zdialog_activity_choosepictrue);
 
         picImg = (ImageView) findViewById(R.id.img_pic);
         imgFileTv = (TextView) findViewById(R.id.tv_imgfile);

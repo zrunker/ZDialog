@@ -59,7 +59,7 @@ public class TipDialog {
     }
 
     public TipDialog(@NonNull Context context) {
-        this(context, R.style.diydialog);
+        this(context, R.style.zdialog_diyDialog);
     }
 
     public TipDialog(@NonNull Context context, @StyleRes int themeResId) {
@@ -72,7 +72,7 @@ public class TipDialog {
      * 初始化
      */
     private void init() {
-        dialog.setContentView(R.layout.layout_tip_dialog);
+        dialog.setContentView(R.layout.zdialog_layout_tip_dialog);
         topLayout = dialog.findViewById(R.id.top_layout);
         titleTv = dialog.findViewById(R.id.tv_title);
         titleTv.setGravity(Gravity.CENTER);

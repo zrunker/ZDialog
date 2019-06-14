@@ -45,7 +45,7 @@ public class DelDialog {
     }
 
     public DelDialog(@NonNull Context context) {
-        this(context, R.style.diydialog);
+        this(context, R.style.zdialog_diyDialog);
     }
 
     public DelDialog(@NonNull Context context, @StyleRes int themeResId) {
@@ -58,7 +58,7 @@ public class DelDialog {
      * 初始化控件
      */
     private void init() {
-        dialog.setContentView(R.layout.layout_del_dialog);
+        dialog.setContentView(R.layout.zdialog_layout_del_dialog);
         delBtn = dialog.findViewById(R.id.btn_del);
         delBtn.setOnClickListener(new View.OnClickListener() {
             @Override

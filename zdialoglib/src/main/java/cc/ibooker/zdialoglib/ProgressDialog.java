@@ -37,7 +37,7 @@ public class ProgressDialog {
     }
 
     public ProgressDialog(@NonNull Context context) {
-        this(context, R.style.proDialog);
+        this(context, R.style.zdialog_proDialog);
     }
 
     public ProgressDialog(@NonNull Context context, @StyleRes int themeResId) {
@@ -50,7 +50,7 @@ public class ProgressDialog {
      * 初始化控件
      */
     private void init() {
-        dialog.setContentView(R.layout.layout_progress_dialog2);
+        dialog.setContentView(R.layout.zdialog_layout_progress_dialog2);
         progressBar = dialog.findViewById(R.id.dialog_progress);
         // 按返回键是否取消
         dialog.setCancelable(true);

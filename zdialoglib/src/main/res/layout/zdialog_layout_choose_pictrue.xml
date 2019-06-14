@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@null"
-        android:text="@string/local"
+        android:text="@string/ZDialogLib_local"
         android:textColor="#40aff2"
         android:textSize="16sp" />
 
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@null"
-        android:text="@string/photo"
+        android:text="@string/ZDialogLib_photo"
         android:textColor="#40aff2"
         android:textSize="16sp" />
 
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@null"
-        android:text="@string/cancel"
+        android:text="@string/ZDialogLib_cancel"
         android:textColor="#40aff2"
         android:textSize="16sp" />
 
