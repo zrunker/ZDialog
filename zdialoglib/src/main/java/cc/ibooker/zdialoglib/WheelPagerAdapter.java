@@ -1,6 +1,9 @@
 package cc.ibooker.zdialoglib;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -9,6 +12,9 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 
 import java.util.ArrayList;
 
@@ -103,6 +109,11 @@ public class WheelPagerAdapter extends PagerAdapter {
             }
             WheelDialogBean data = mDatas.get(position);
             if (data != null) {
+                Object object = data.getUrl();
+                if (object == null)
+                    object = data.getBitmap();
+                if (object == null)
+                    object = data.getRes();
 //                if (screenWidth > 0)
 //                    Glide.with(context)
 //                            .load(data.getUrl())
@@ -124,24 +135,29 @@ public class WheelPagerAdapter extends PagerAdapter {
 //                            .override(screenWidth / 2, screenWidth)
 //                            .into(viewHolder.scaleImageView);
 //                else
-                Glide.with(context)
-                        .load(data.getUrl())
-                        /*.asBitmap()
-                        .into(new SimpleTarget<Bitmap>(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL) {
-                            @Override
-                            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                                if (screenWidth > 0) {
+                if (data.isLimitSize())
+                    Glide.with(context)
+                            .load(object)
+                            .placeholder(data.getDefaultRes())
+                            .error(data.getErrorRes())
+                            .into(viewHolder.scaleImageView);
+                else
+                    Glide.with(context)
+                            .load(object)
+                            .asBitmap()
+                            .placeholder(data.getDefaultRes())
+                            .error(data.getErrorRes())
+                            .into(new SimpleTarget<Bitmap>(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL) {
+                                @Override
+                                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                                     int imageWidth = resource.getWidth();
                                     int imageHeight = resource.getHeight();
-                                    int height = screenWidth * imageHeight / imageWidth;
-                                    ViewGroup.LayoutParams para = viewHolder.scaleImageView.getLayoutParams();
-                                    para.height = height;
-                                    para.width = screenWidth;
+                                    Bitmap bitmap = Bitmap.createBitmap(resource, 0, 0, imageWidth, imageHeight);
+                                    Canvas canvas = new Canvas(bitmap);
+                                    canvas.drawColor(0xFFFFFFFF, PorterDuff.Mode.DST_OVER);
+                                    viewHolder.scaleImageView.setImageBitmap(bitmap);
                                 }
-                                viewHolder.scaleImageView.setImageBitmap(resource);
-                            }
-                        });*/
-                        .into(viewHolder.scaleImageView);
+                            });
             }
             return view;
         }
