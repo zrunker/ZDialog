@@ -350,6 +350,24 @@ public class WheelDialog2<T> {
     }
 
     /**
+     * 设置轮播点击监听
+     */
+    public WheelDialog2 setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setOnItemClickListener(onItemClickListener);
+        return this;
+    }
+
+    /**
+     * 设置轮播长按事件监听
+     */
+    public WheelDialog2 setOnItemLongClickListener(OnItemLongClickListener onItemLongClickListener) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setOnItemLongClickListener(onItemLongClickListener);
+        return this;
+    }
+
+    /**
      * 展示Dialog
      */
     public void showWheelDialog2() {

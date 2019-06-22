@@ -39,18 +39,25 @@ public class WheelPagerAdapter2<T> extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
         View view = getView(position, null, container);
         if (view != null) {// 控件点击事件
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (ZDialogClickUtil.isFastClick())
-                        return;
-                    if (onItemClickListener != null)
+            if (onItemClickListener != null)
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ZDialogClickUtil.isFastClick())
+                            return;
                         onItemClickListener.onItemClickListener(position);
-                }
-            });
-        }
-        // 如果View已经在之前添加到了一个父组件，则必须先remove，否则会抛出IllegalStateException。
-        if (view != null) {
+                    }
+                });
+            if (onItemLongClickListener != null)
+                view.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        onItemLongClickListener.onItemLongClick(position);
+                        return true;
+                    }
+                });
+
+            // 如果View已经在之前添加到了一个父组件，则必须先remove，否则会抛出IllegalStateException。
             ViewParent vp = view.getParent();
             if (vp != null) {
                 ViewGroup parent = (ViewGroup) vp;
@@ -92,5 +99,11 @@ public class WheelPagerAdapter2<T> extends PagerAdapter {
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
+    }
+
+    private OnItemLongClickListener onItemLongClickListener;
+
+    public void setOnItemLongClickListener(OnItemLongClickListener onItemLongClickListener) {
+        this.onItemLongClickListener = onItemLongClickListener;
     }
 }

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.support.v4.view.ViewPager;
@@ -42,6 +43,7 @@ public class WheelDialog {
     private int selectedRes, defaultRes;
     private ImageView[] mImageViews;
     private boolean isIndicatorVisible = true;// 标记指示器是否可见
+    private String vpImageViewBackGroudColor;
 
     public enum PageIndicatorAlign {
         ALIGN_PARENT_LEFT, ALIGN_PARENT_RIGHT, CENTER_HORIZONTAL
@@ -73,6 +75,10 @@ public class WheelDialog {
 
     public void setTextView(TextView textView) {
         this.textView = textView;
+    }
+
+    public ViewPager getViewPager() {
+        return viewPager;
     }
 
     public WheelDialog(@NonNull Context context) {
@@ -421,14 +427,102 @@ public class WheelDialog {
      * @param color 字体颜色 16进制
      */
     public WheelDialog setTextViewColor(String color) {
-        try {
-            if (textView != null && !TextUtils.isEmpty(color)) {
-                textView.setTextColor(Color.parseColor(color));
-                textView.invalidate();
+        if (!TextUtils.isEmpty(color))
+            try {
+                if (textView != null && !TextUtils.isEmpty(color)) {
+                    textView.setTextColor(Color.parseColor(color));
+                    textView.invalidate();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        return this;
+    }
+
+    /**
+     * 设置ViewPager子控件图片背景颜色
+     */
+    public WheelDialog setVpImageViewBackGroudColor(String vpImageViewBackGroudColor) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setVpImageViewBackGroudColor(vpImageViewBackGroudColor);
+        return this;
+    }
+
+    public WheelDialog setVpImageViewBackGroudRes(int vpImageViewBackGroudRes) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setVpImageViewBackGroudRes(vpImageViewBackGroudRes);
+        return this;
+    }
+
+    public WheelDialog setVpImageViewBackGroudDrawable(Drawable vpImageViewBackGroudDrawable) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setVpImageViewBackGroudDrawable(vpImageViewBackGroudDrawable);
+        return this;
+    }
+
+    /**
+     * 设置ViewPager子控件背景颜色
+     */
+    public WheelDialog setVpItemViewBackGroudColor(String vpItemViewBackGroudColor) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setVpItemViewBackGroudColor(vpImageViewBackGroudColor);
+        return this;
+    }
+
+    public WheelDialog setVpItemViewBackGroudRes(int vpItemViewBackGroudRes) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setVpItemViewBackGroudRes(vpItemViewBackGroudRes);
+        return this;
+    }
+
+    public WheelDialog setVpItemViewBackGroudDrawable(Drawable vpItemViewBackGroudDrawable) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setVpItemViewBackGroudDrawable(vpItemViewBackGroudDrawable);
+        return this;
+    }
+
+    /**
+     * 设置ViewPager子控件大小
+     */
+    public WheelDialog setVpImageViewSize(int width, int height) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setVpImageViewSize(width, height);
+        return this;
+    }
+
+    /**
+     * 设置轮播点击监听
+     */
+    public WheelDialog setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setOnItemClickListener(onItemClickListener);
+        return this;
+    }
+
+    /**
+     * 设置轮播长按事件监听
+     */
+    public WheelDialog setOnItemLongClickListener(OnItemLongClickListener onItemLongClickListener) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setOnItemLongClickListener(onItemLongClickListener);
+        return this;
+    }
+
+    /**
+     * 设置轮播图片点击事件
+     */
+    public WheelDialog setOnItemImageClickListener(OnItemImageClickListener onItemImageClickListener) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setOnItemImageClickListener(onItemImageClickListener);
+        return this;
+    }
+
+    /**
+     * 设置轮播图片长按事件
+     */
+    public WheelDialog setOnItemImageLongClickListener(OnItemImageLongClickListener onItemImageLongClickListener) {
+        if (wheelPagerAdapter != null)
+            wheelPagerAdapter.setOnItemImageLongClickListener(onItemImageLongClickListener);
         return this;
     }
 

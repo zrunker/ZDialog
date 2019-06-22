@@ -16,6 +16,7 @@ public class WheelDialogBean {
     private boolean isLimitSize;// 是否限制大小
     private int defaultRes;// 占位图
     private int errorRes;// 错误图
+    private boolean isCanScale;// 是否能够缩放
 
     public WheelDialogBean() {
         super();
@@ -46,6 +47,27 @@ public class WheelDialogBean {
         this.name = name;
         this.bitmap = bitmap;
         this.isLimitSize = isLimitSize;
+    }
+
+    public WheelDialogBean(String name, String url, boolean isLimitSize, boolean isCanScale) {
+        this.name = name;
+        this.url = url;
+        this.isLimitSize = isLimitSize;
+        this.isCanScale = isCanScale;
+    }
+
+    public WheelDialogBean(String name, Bitmap bitmap, boolean isLimitSize, boolean isCanScale) {
+        this.name = name;
+        this.bitmap = bitmap;
+        this.isLimitSize = isLimitSize;
+        this.isCanScale = isCanScale;
+    }
+
+    public WheelDialogBean(String name, int res, boolean isLimitSize, boolean isCanScale) {
+        this.name = name;
+        this.res = res;
+        this.isLimitSize = isLimitSize;
+        this.isCanScale = isCanScale;
     }
 
     public String getName() {
@@ -104,6 +126,14 @@ public class WheelDialogBean {
         this.res = res;
     }
 
+    public boolean isCanScale() {
+        return isCanScale;
+    }
+
+    public void setCanScale(boolean canScale) {
+        isCanScale = canScale;
+    }
+
     @Override
     public String toString() {
         return "WheelDialogBean{" +
@@ -114,6 +144,7 @@ public class WheelDialogBean {
                 ", isLimitSize=" + isLimitSize +
                 ", defaultRes=" + defaultRes +
                 ", errorRes=" + errorRes +
+                ", isCanScale=" + isCanScale +
                 '}';
     }
 }

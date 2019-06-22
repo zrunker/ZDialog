@@ -1,6 +1,7 @@
 package cc.ibooker.zdialoglib;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
@@ -22,7 +23,6 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
  * https://github.com/zrunker/ZDialog
  */
 public class ScaleImageView extends AppCompatImageView implements OnGlobalLayoutListener, OnScaleGestureListener, OnTouchListener {
-
     private boolean mOnce = false; // 是否为第一次加载
     /**
      * 初始化时缩放值，也是最小缩放值
@@ -52,12 +52,24 @@ public class ScaleImageView extends AppCompatImageView implements OnGlobalLayout
     // 双击放大和缩小
     private GestureDetector mGestureDetector;
     private boolean isAutoScale;
+    // 是否限制大小
+    private boolean isLimitSize;
+
+    public void setLimitSize(boolean limitSize) {
+        isLimitSize = limitSize;
+    }
 
     /**
      * 三种构造方法
      */
     public ScaleImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        if (attrs != null) {
+            // 获取自定义属性，并设置
+            TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.ScaleImageView);
+            isLimitSize = ta.getBoolean(R.styleable.ScaleImageView_isLimitSize, false);
+            ta.recycle();
+        }
         // 初始化
         mScaleMatrix = new Matrix();
         setScaleType(ScaleType.MATRIX);
@@ -184,14 +196,21 @@ public class ScaleImageView extends AppCompatImageView implements OnGlobalLayout
             float dh = d.getIntrinsicHeight();
 
             // 对比图片的高度和宽度和控件的宽度和高度
-            float scale = 0.1f; // 缩放比例
+            float scale = 1.0f; // 缩放比例
             if (dw > width && dh < height) { // 图片宽度大于控件的宽度，高度小于控件的高度，缩小
                 scale = width * 1.0f / dw;
             }
             if (dh > height && dw < width) { // 图片高度大于控件的宽度，宽度小于控件的高度，缩小
                 scale = height * 1.0f / dh;
             }
-            if ((dw > width && dh > height) || (dw < width && dh < height)) {
+//            if ((dw > width && dh > height) || (dw < width && dh < height)) {
+//                scale = Math.min(width * 1.0f / dw, height * 1.0f / dh);
+//            }
+            if (isLimitSize) {
+                if (dw > width && dh > height) {
+                    scale = Math.min(width * 1.0f / dw, height * 1.0f / dh);
+                }
+            } else if ((dw > width && dh > height) || (dw < width && dh < height)) {
                 scale = Math.min(width * 1.0f / dw, height * 1.0f / dh);
             }
 
@@ -462,6 +481,7 @@ public class ScaleImageView extends AppCompatImageView implements OnGlobalLayout
 
     public interface OnMyLongClickListener {
         void onMyLongClick(View v);
+
     }
 
     public void setOnMyLongClickListener(OnMyLongClickListener onMyLongClickListener) {
