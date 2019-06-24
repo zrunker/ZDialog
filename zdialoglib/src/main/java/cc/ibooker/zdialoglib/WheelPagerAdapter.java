@@ -2,7 +2,9 @@ package cc.ibooker.zdialoglib;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -12,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -35,7 +36,7 @@ public class WheelPagerAdapter extends PagerAdapter {
     private ArrayList<WheelDialogBean> mDatas;
     private LayoutInflater inflater;
     private View[] mViews;
-//    private int screenWidth, screenHeight;
+    //    private int screenWidth, screenHeight;
     private String vpImageViewBackGroudColor, vpItemViewBackGroudColor;
     private int vpImageViewBackGroudRes, vpItemViewBackGroudRes;
     private Drawable vpImageViewBackGroudDrawable, vpItemViewBackGroudDrawable;
@@ -173,9 +174,7 @@ public class WheelPagerAdapter extends PagerAdapter {
                         viewHolder = new ViewHolder();
                         viewHolder.scaleImageView = view.findViewById(R.id.scaleImageView);
                         // 设置背景
-                        if (!TextUtils.isEmpty(vpImageViewBackGroudColor))
-                            viewHolder.scaleImageView.setBackgroundColor(Color.parseColor(vpImageViewBackGroudColor));
-                        else if (vpImageViewBackGroudDrawable != null)
+                        if (vpImageViewBackGroudDrawable != null)
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
                                 viewHolder.scaleImageView.setBackground(vpImageViewBackGroudDrawable);
                             else
@@ -195,9 +194,22 @@ public class WheelPagerAdapter extends PagerAdapter {
                     viewHolder.scaleImageView.setLimitSize(data.isLimitSize());
                     Glide.with(context)
                             .load(object)
+                            .asBitmap()
                             .placeholder(data.getDefaultRes())
                             .error(data.getErrorRes())
-                            .into(viewHolder.scaleImageView);
+                            .into(new SimpleTarget<Bitmap>(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL) {
+                                @Override
+                                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                                    int imageWidth = resource.getWidth();
+                                    int imageHeight = resource.getHeight();
+                                    Bitmap bitmap = Bitmap.createBitmap(resource, 0, 0, imageWidth, imageHeight);
+                                    Canvas canvas = new Canvas(bitmap);
+                                    // 设置背景
+                                    if (!TextUtils.isEmpty(vpImageViewBackGroudColor))
+                                        canvas.drawColor(Color.parseColor(vpImageViewBackGroudColor), PorterDuff.Mode.DST_OVER);
+                                    viewHolder.scaleImageView.setImageBitmap(bitmap);
+                                }
+                            });
                     // 设置图片点击监听
                     if (onItemImageClickListener != null)
                         viewHolder.scaleImageView.setOnMyClickListener(new ScaleImageView.OnMyClickListener() {

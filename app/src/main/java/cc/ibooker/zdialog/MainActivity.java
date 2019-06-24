@@ -328,7 +328,7 @@ public class MainActivity extends AppCompatActivity {
         wheelDialog.setDatas(datas, "http://www.pptbz.com/pptpic/UploadFiles_6909/201406/2014063021281300.gif")
                 .setPageIndicatorAlign(WheelDialog.PageIndicatorAlign.CENTER_HORIZONTAL)
                 .setCanceledOnTouchOutside(true)
-                .setVpImageViewBackGroudColor("#40aff2")
+                .setVpImageViewBackGroudColor("#FFFFFF")
                 .showWheelDialog();
     }
 
