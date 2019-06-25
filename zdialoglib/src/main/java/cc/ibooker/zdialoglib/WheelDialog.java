@@ -43,7 +43,7 @@ public class WheelDialog {
     private int selectedRes, defaultRes;
     private ImageView[] mImageViews;
     private boolean isIndicatorVisible = true;// 标记指示器是否可见
-    private String vpImageViewBackGroudColor;
+    private boolean updatePageLock = false;
 
     public enum PageIndicatorAlign {
         ALIGN_PARENT_LEFT, ALIGN_PARENT_RIGHT, CENTER_HORIZONTAL
@@ -121,17 +121,7 @@ public class WheelDialog {
 
                 @Override
                 public void onPageSelected(int position) {
-                    if (isIndicatorVisible && datas.size() > position && position >= 0) {
-                        textView.setText(datas.get(position).getName());
-                        if (mImageViews != null) {
-                            for (int i = 0; i < mImageViews.length; i++) {
-                                mImageViews[position].setBackgroundResource(selectedRes);
-                                if (position != i) {
-                                    mImageViews[i].setBackgroundResource(defaultRes);
-                                }
-                            }
-                        }
-                    }
+                    updatePage(position);
                 }
 
                 @Override
@@ -156,9 +146,29 @@ public class WheelDialog {
                     }
                 }
                 viewPager.setCurrentItem(realPosition);
+                updatePage(realPosition);
             }
         }
         return this;
+    }
+
+    // 切换页面更改
+    private void updatePage(int position) {
+        if (!updatePageLock) {
+            updatePageLock = true;
+            if (mDatas.size() > position && position >= 0) {
+                textView.setText(mDatas.get(position).getName());
+                if (mImageViews != null && isIndicatorVisible) {
+                    for (int i = 0; i < mImageViews.length; i++) {
+                        mImageViews[position].setBackgroundResource(selectedRes);
+                        if (position != i) {
+                            mImageViews[i].setBackgroundResource(defaultRes);
+                        }
+                    }
+                }
+            }
+            updatePageLock = false;
+        }
     }
 
     // 自定义setPicPagerAdapter
@@ -465,7 +475,7 @@ public class WheelDialog {
      */
     public WheelDialog setVpItemViewBackGroudColor(String vpItemViewBackGroudColor) {
         if (wheelPagerAdapter != null)
-            wheelPagerAdapter.setVpItemViewBackGroudColor(vpImageViewBackGroudColor);
+            wheelPagerAdapter.setVpItemViewBackGroudColor(vpItemViewBackGroudColor);
         return this;
     }
 

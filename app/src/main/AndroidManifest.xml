@@ -29,7 +29,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ChoosePictrueActivity"/>
+        <activity android:name=".ChoosePictrueActivity" />
+        <activity android:name=".WheelActivity" />
 
     </application>
 

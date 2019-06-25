@@ -2,6 +2,7 @@ package cc.ibooker.zdialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Intent intent = new Intent(this, ChoosePictrueActivity.class);
+//        Intent intent = new Intent(this, WheelActivity.class);
 //        startActivity(intent);
     }
 
