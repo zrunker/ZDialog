@@ -28,6 +28,15 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@android:color/holo_blue_light"
+        android:onClick="onProgressDialog2"
+        android:padding="5dp"
+        android:text="ProgressDialog2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_blue_light"
         android:onClick="onTipDialog"
         android:padding="5dp"
         android:text="TipDialog" />

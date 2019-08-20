@@ -25,6 +25,7 @@ import cc.ibooker.zdialoglib.Holder;
 import cc.ibooker.zdialoglib.HolderCreator;
 import cc.ibooker.zdialoglib.ProDialog;
 import cc.ibooker.zdialoglib.ProgressDialog;
+import cc.ibooker.zdialoglib.ProgressDialog2;
 import cc.ibooker.zdialoglib.ScaleImageView;
 import cc.ibooker.zdialoglib.TipDialog;
 import cc.ibooker.zdialoglib.WheelDialog;
@@ -353,6 +354,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }, datas, 1)
                 .showWheelDialog2();
+    }
+
+    public void onProgressDialog2(View view) {
+        ProgressDialog2 progressDialog2 = new ProgressDialog2(this);
+        progressDialog2.showProDialog();
     }
 
     class ViewHolder implements Holder<WheelDialogBean> {
