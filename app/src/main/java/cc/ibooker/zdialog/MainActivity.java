@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onProgressDialog(View view) {
         progressDialog = new ProgressDialog(this);
-        progressDialog.showProDialog();
+        progressDialog.setProgressColor(R.color.colorAccent).showProDialog();
     }
 
     // 显示提示Dialog
