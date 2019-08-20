@@ -1,8 +1,12 @@
 package cc.ibooker.zdialoglib;
 
+import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.util.DisplayMetrics;
@@ -224,4 +228,19 @@ public class ProgressDialog {
             dialog.cancel();
     }
 
+    /**
+     * 设置进度条颜色
+     *
+     * @param colorRes 颜色资源文件
+     */
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public ProgressDialog setProgressColor(int colorRes) {
+        if (colorRes != 0) {
+            int color = context.getResources().getColor(colorRes);
+            ColorStateList colorStateList = ColorStateList.valueOf(color);
+            progressBar.setIndeterminateTintList(colorStateList);
+            progressBar.setIndeterminateTintMode(PorterDuff.Mode.SRC_ATOP);
+        }
+        return this;
+    }
 }
