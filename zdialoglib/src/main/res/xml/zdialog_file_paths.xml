@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <paths>
-        <external-path
-            name="ZDialogPhotoCache"
-            path="ZDialogPhotoCache/" />
-    </paths>
-</resources>
+<paths>
+    <external-path
+        name="zdialog_photo_path"
+        path="ZDialogPhotoCache/" />
+    <files-path
+        name="zdialog_photo_files"
+        path="ZDialogPhotoCache/" />
+    <cache-path
+        name="zdialog_photo_cache"
+        path="ZDialogPhotoCache/" />
+</paths>
