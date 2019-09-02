@@ -22,7 +22,7 @@
         android:supportsRtl="true">
 
         <!--Android7.0+用于访问外部文件 -->
-        <provider
+        <!--<provider
             android:name=".ZFileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
@@ -30,7 +30,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/zdialog_file_paths" />
-        </provider>
+        </provider>-->
 
     </application>
 
