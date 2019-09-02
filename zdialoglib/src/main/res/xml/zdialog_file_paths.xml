@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <paths>
-        <root-path
-            name="ZDialogPhotoCacheRoot"
-            path="" />
         <external-path
             name="ZDialogPhotoCache"
-            path="ZDialogPhotoCache" />
+            path="." />
     </paths>
 </resources>
