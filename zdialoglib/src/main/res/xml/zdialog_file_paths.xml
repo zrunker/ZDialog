@@ -3,6 +3,6 @@
     <paths>
         <external-path
             name="ZDialogPhotoCache"
-            path="." />
+            path="ZDialogPhotoCache/" />
     </paths>
 </resources>
