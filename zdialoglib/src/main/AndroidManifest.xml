@@ -24,7 +24,7 @@
         <!--Android7.0+用于访问外部文件 -->
         <provider
             android:name=".ZFileProvider"
-            android:authorities="cc.ibooker.zdialoglib.fileProvider"
+            android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

@@ -72,7 +72,7 @@ public class ChoosePictrueUtil {
                     Intent openCameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     // 判断是否是AndroidN以及更高的版本
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        photoUri = ZFileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID +".fileProvider", imgFile);
+                        photoUri = ZFileProvider.getUriForFile(context, context.getPackageName() + ".fileprovider", imgFile);
                         // 添加权限
                         openCameraIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                     } else
