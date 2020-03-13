@@ -54,6 +54,10 @@ public class ScaleImageView extends AppCompatImageView implements OnGlobalLayout
     // 是否限制大小
     private boolean isLimitSize;
 
+    public void setLimitSize(boolean limitSize) {
+        isLimitSize = limitSize;
+    }
+
     /**
      * 三种构造方法
      */
