@@ -2,5 +2,6 @@
 <resources>
     <declare-styleable name="ScaleImageView">
         <attr name="isLimitSize" format="boolean" />
+        <attr name="isOpenOnceScale" format="boolean" />
     </declare-styleable>
 </resources>

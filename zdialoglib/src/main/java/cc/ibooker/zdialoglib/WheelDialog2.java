@@ -3,6 +3,7 @@ package cc.ibooker.zdialoglib;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.support.v4.view.ViewPager;
@@ -403,4 +404,25 @@ public class WheelDialog2<T> {
         return outMetrics.heightPixels;
     }
 
+    /**
+     * 设置背景
+     *
+     * @param resource 资源文件地址
+     */
+    public WheelDialog2<T> setBackgroundDrawable(int resource) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawableResource(resource);
+        return this;
+    }
+
+    /**
+     * 设置背景
+     *
+     * @param drawable drawable资源
+     */
+    public WheelDialog2<T> setBackgroundDrawable(Drawable drawable) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawable(drawable);
+        return this;
+    }
 }

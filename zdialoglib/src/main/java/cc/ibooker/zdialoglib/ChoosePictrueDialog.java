@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.support.v4.app.ActivityCompat;
@@ -460,6 +461,28 @@ public class ChoosePictrueDialog {
     public void closeChoosePictrueDialog() {
         if (dialog != null)
             dialog.cancel();
+    }
+
+    /**
+     * 设置背景
+     *
+     * @param resource 资源文件地址
+     */
+    public ChoosePictrueDialog setBackgroundDrawable(int resource) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawableResource(resource);
+        return this;
+    }
+
+    /**
+     * 设置背景
+     *
+     * @param drawable drawable资源
+     */
+    public ChoosePictrueDialog setBackgroundDrawable(Drawable drawable) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawable(drawable);
+        return this;
     }
 
     // 本地按钮点击接口

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.text.TextUtils;
@@ -313,6 +314,28 @@ public class DelDialog {
             wm.getDefaultDisplay().getMetrics(outMetrics);
         }
         return outMetrics.heightPixels;
+    }
+
+    /**
+     * 设置背景
+     *
+     * @param resource 资源文件地址
+     */
+    public DelDialog setBackgroundDrawable(int resource) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawableResource(resource);
+        return this;
+    }
+
+    /**
+     * 设置背景
+     *
+     * @param drawable drawable资源
+     */
+    public DelDialog setBackgroundDrawable(Drawable drawable) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawable(drawable);
+        return this;
     }
 
     // 执行删除接口

@@ -3,6 +3,7 @@ package cc.ibooker.zdialoglib;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.util.DisplayMetrics;
@@ -55,6 +56,8 @@ public class DiyDialog {
         this.setDimAmount(0.2f);
         // 设置默认居中显示
         this.setDiyDialogGravity(DiyDialogGravity.GRAVITY_CENTER);
+        // 设置透明背景
+        this.setBackgroundDrawable(android.R.color.transparent);
     }
 
     // 是否展示
@@ -235,4 +238,25 @@ public class DiyDialog {
         return outMetrics.heightPixels;
     }
 
+    /**
+     * 设置背景
+     *
+     * @param resource 资源文件地址
+     */
+    public DiyDialog setBackgroundDrawable(int resource) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawableResource(resource);
+        return this;
+    }
+
+    /**
+     * 设置背景
+     *
+     * @param drawable drawable资源
+     */
+    public DiyDialog setBackgroundDrawable(Drawable drawable) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawable(drawable);
+        return this;
+    }
 }

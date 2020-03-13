@@ -20,7 +20,6 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
  * 自定义可以缩放的ImageView
  *
  * @author 邹峰立
- * https://github.com/zrunker/ZDialog
  */
 public class ScaleImageView extends AppCompatImageView implements OnGlobalLayoutListener, OnScaleGestureListener, OnTouchListener {
     private boolean mOnce = false; // 是否为第一次加载
@@ -55,10 +54,6 @@ public class ScaleImageView extends AppCompatImageView implements OnGlobalLayout
     // 是否限制大小
     private boolean isLimitSize;
 
-    public void setLimitSize(boolean limitSize) {
-        isLimitSize = limitSize;
-    }
-
     /**
      * 三种构造方法
      */
@@ -68,6 +63,7 @@ public class ScaleImageView extends AppCompatImageView implements OnGlobalLayout
             // 获取自定义属性，并设置
             TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.ScaleImageView);
             isLimitSize = ta.getBoolean(R.styleable.ScaleImageView_isLimitSize, false);
+            mOnce = ta.getBoolean(R.styleable.ScaleImageView_isOpenOnceScale, false);
             ta.recycle();
         }
         // 初始化
@@ -481,7 +477,6 @@ public class ScaleImageView extends AppCompatImageView implements OnGlobalLayout
 
     public interface OnMyLongClickListener {
         void onMyLongClick(View v);
-
     }
 
     public void setOnMyLongClickListener(OnMyLongClickListener onMyLongClickListener) {

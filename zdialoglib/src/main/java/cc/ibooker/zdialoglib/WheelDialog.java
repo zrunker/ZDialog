@@ -572,4 +572,25 @@ public class WheelDialog {
         return outMetrics.heightPixels;
     }
 
+    /**
+     * 设置背景
+     *
+     * @param resource 资源文件地址
+     */
+    public WheelDialog setBackgroundDrawable(int resource) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawableResource(resource);
+        return this;
+    }
+
+    /**
+     * 设置背景
+     *
+     * @param drawable drawable资源
+     */
+    public WheelDialog setBackgroundDrawable(Drawable drawable) {
+        if (dialog != null && dialog.getWindow() != null)
+            dialog.getWindow().setBackgroundDrawable(drawable);
+        return this;
+    }
 }
