@@ -1,5 +1,5 @@
 # ZDialog
-自定义Dialog（一）：圆形进度条Dialog。自定义Dialog（二）：提示Dialog。自定义Dialog（三）：删除Dialog。自定义Dialog（四）：自定义视图Dialog。自定义Dialog（五）：选择图片Dialog。（六）：轮播Dialog。使用工具Android Studio。
+自定义Dialog（一）：圆形进度条Dialog。自定义Dialog（二）：提示Dialog。自定义Dialog（三）：删除Dialog。自定义Dialog（四）：自定义视图Dialog。自定义Dialog（五）：选择图片Dialog。（六）：轮播Dialog。
 
 ![书客创作](http://upload-images.jianshu.io/upload_images/3480018-0a7f5d0ede43b538..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -18,7 +18,7 @@ allprojects {
 }
 
 dependencies {
-	implementation 'com.github.zrunker:ZDialog:v1.1.2'
+	implementation 'com.github.zrunker:ZDialog:v1.1.5.6'
 }
 ```
 ##### 2、maven引入，在maven配置文件中引入以下代码：
@@ -33,7 +33,7 @@ dependencies {
 <dependency>
 	<groupId>com.github.zrunker</groupId>
 	<artifactId>ZDialog</artifactId>
-	<version>v1.1.2</version>
+	<version>v1.1.5.6</version>
 </dependency>
 ```
 
