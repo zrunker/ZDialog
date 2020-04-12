@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bcac92c-3206-4698-8b4a-4c1ce4e5762e" name="Default" comment="">
+    <list default="true" id="17419081-0384-416b-8709-69b695521542" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -23,71 +23,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_collections_28_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_exifinterface_27_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_28_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_3_7_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zrunker_ZBitmap_v1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zrunker_ZFile_v1_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_10_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_14_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZDialog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ZDialog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ChoosePictrueDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ChoosePictrueDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DelDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DelDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DiyDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DiyDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog2.java" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/TipDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/TipDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog2.java" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdialoglib/zdialoglib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zdialoglib/zdialoglib.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/ibooker/zdialog/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/ibooker/zdialog/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_diy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_diy.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -110,29 +49,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DiyDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DiyDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="239" lean-forward="true" selection-start-line="239" selection-end-line="260" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ChoosePictrueDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ChoosePictrueDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="481" column="30" selection-start-line="481" selection-start-column="30" selection-end-line="481" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DelDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DelDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="323" column="20" selection-start-line="323" selection-start-column="20" selection-end-line="323" selection-end-column="20" />
+            <state relative-caret-position="147">
+              <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
+              <folding>
+                <element signature="e#3679#3680#0" expanded="true" />
+                <element signature="e#3738#3739#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,8 +65,8 @@
       <file leaf-file-name="ProDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="289" lean-forward="true" selection-start-line="289" selection-end-line="289" />
+            <state relative-caret-position="137">
+              <caret line="316" column="49" selection-start-line="316" selection-start-column="49" selection-end-line="316" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -149,8 +74,8 @@
       <file leaf-file-name="ProgressDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="253" column="25" selection-start-line="253" selection-start-column="25" selection-end-line="253" selection-end-column="25" />
+            <state relative-caret-position="116">
+              <caret line="217" column="30" selection-start-line="217" selection-start-column="26" selection-end-line="217" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -158,26 +83,29 @@
       <file leaf-file-name="ProgressDialog2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="288" column="26" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
+            <state relative-caret-position="-451">
+              <caret line="211" column="26" selection-start-line="211" selection-start-column="26" selection-end-line="211" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScaleImageView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ScaleImageView.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/ibooker/zdialog/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4795">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="309">
+              <caret line="360" column="42" selection-start-line="360" selection-start-column="42" selection-end-line="360" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WheelDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog.java">
+      <file leaf-file-name="activity_diy.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_diy.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8773">
-              <caret line="590" column="22" selection-start-line="590" selection-start-column="22" selection-end-line="590" selection-end-column="22" />
+            <state relative-caret-position="84">
+              <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -185,8 +113,17 @@
       <file leaf-file-name="TipDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/TipDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="662" selection-start-line="662" selection-end-line="662" />
+            <state relative-caret-position="137">
+              <caret line="651" column="31" selection-start-line="651" selection-start-column="31" selection-end-line="651" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WheelDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="546" column="49" selection-start-line="546" selection-start-column="49" selection-end-line="546" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -194,13 +131,28 @@
       <file leaf-file-name="WheelDialog2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="411" column="26" selection-start-line="411" selection-start-column="26" selection-end-line="411" selection-end-column="26" />
+            <state relative-caret-position="137">
+              <caret line="375" column="49" selection-start-line="375" selection-start-column="49" selection-end-line="375" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiyDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DiyDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="209" column="26" selection-start-line="209" selection-start-column="26" selection-end-line="209" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>void</find>
+      <find>show</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -3520,21 +3472,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ChoosePictrueUtil.java" />
         <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DiyDialog.java" />
-        <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ChoosePictrueDialog.java" />
-        <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DelDialog.java" />
-        <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProDialog.java" />
         <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog.java" />
         <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog2.java" />
+        <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DelDialog.java" />
+        <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProDialog.java" />
         <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/TipDialog.java" />
-        <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog2.java" />
         <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog.java" />
+        <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog2.java" />
+        <option value="$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ChoosePictrueDialog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_diy.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cc/ibooker/zdialog/MainActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="85" />
-    <option name="y" value="25" />
+    <option name="x" value="15" />
+    <option name="y" value="-25" />
     <option name="width" value="1750" />
     <option name="height" value="970" />
   </component>
@@ -3544,9 +3499,25 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
+            <path>
+              <item name="ZDialog" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="ZDialog" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="ZDialog" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="zdialog" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
             <path>
               <item name="ZDialog" type="1abcf292:AndroidViewProjectNode" />
               <item name="zdialoglib" type="feadf853:AndroidModuleNode" />
@@ -3567,11 +3538,11 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../../android-sdk" />
+    <property name="device.picker.selection" value="P7C0218526000046" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -3607,7 +3578,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -3691,25 +3662,40 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0bcac92c-3206-4698-8b4a-4c1ce4e5762e" name="Default" comment="" />
-      <created>1584096605056</created>
+      <changelist id="17419081-0384-416b-8709-69b695521542" name="Default" comment="" />
+      <created>1586680755960</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1584096605056</updated>
+      <updated>1586680755960</updated>
     </task>
+    <task id="LOCAL-00001" summary="init Commit">
+      <created>1586681370072</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586681370072</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init Commit">
+      <created>1586682423834</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586682423834</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info id="Build Variants" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Preview" weight="0.3299595" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
@@ -3718,7 +3704,7 @@
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966262" />
-      <window_info anchor="bottom" id="Build" visible="true" weight="0.32886904" />
+      <window_info anchor="bottom" id="Build" visible="true" weight="0.33035713" />
       <window_info anchor="right" id="Gradle" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" />
@@ -3727,9 +3713,9 @@
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
@@ -3737,74 +3723,106 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init Commit" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DiyDialog.java">
+    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ChoosePictrueUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="239" lean-forward="true" selection-start-line="239" selection-end-line="260" selection-end-column="5" />
+        <state relative-caret-position="3108">
+          <caret line="166" column="47" selection-start-line="166" selection-start-column="47" selection-end-line="166" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ChoosePictrueDialog.java">
+    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ZFileProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="481" column="30" selection-start-line="481" selection-start-column="30" selection-end-line="481" selection-end-column="30" />
+        <state relative-caret-position="189">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DelDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="323" column="20" selection-start-line="323" selection-start-column="20" selection-end-line="323" selection-end-column="20" />
+        <state relative-caret-position="137">
+          <caret line="285" column="49" selection-start-line="285" selection-start-column="49" selection-end-line="285" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/DiyDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="209" column="26" selection-start-line="209" selection-start-column="26" selection-end-line="209" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="289" lean-forward="true" selection-start-line="289" selection-end-line="289" />
+        <state relative-caret-position="137">
+          <caret line="316" column="49" selection-start-line="316" selection-start-column="49" selection-end-line="316" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="253" column="25" selection-start-line="253" selection-start-column="25" selection-end-line="253" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="288" column="26" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
+        <state relative-caret-position="116">
+          <caret line="217" column="30" selection-start-line="217" selection-start-column="26" selection-end-line="217" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/TipDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="662" selection-start-line="662" selection-end-line="662" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="411" column="26" selection-start-line="411" selection-start-column="26" selection-end-line="411" selection-end-column="26" />
+        <state relative-caret-position="137">
+          <caret line="651" column="31" selection-start-line="651" selection-start-column="31" selection-end-line="651" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8773">
-          <caret line="590" column="22" selection-start-line="590" selection-start-column="22" selection-end-line="590" selection-end-column="22" />
+        <state relative-caret-position="137">
+          <caret line="546" column="49" selection-start-line="546" selection-start-column="49" selection-end-line="546" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ScaleImageView.java">
+    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/WheelDialog2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4795">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state relative-caret-position="137">
+          <caret line="375" column="49" selection-start-line="375" selection-start-column="49" selection-end-line="375" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ChoosePictrueDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
+          <folding>
+            <element signature="e#3679#3680#0" expanded="true" />
+            <element signature="e#3738#3739#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zdialoglib/src/main/java/cc/ibooker/zdialoglib/ProgressDialog2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-451">
+          <caret line="211" column="26" selection-start-line="211" selection-start-column="26" selection-end-line="211" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_diy.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/ibooker/zdialog/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="360" column="42" selection-start-line="360" selection-start-column="42" selection-end-line="360" selection-end-column="42" />
         </state>
       </provider>
     </entry>

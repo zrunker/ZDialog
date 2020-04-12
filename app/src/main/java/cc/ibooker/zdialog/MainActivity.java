@@ -358,7 +358,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onProgressDialog2(View view) {
         ProgressDialog2 progressDialog2 = new ProgressDialog2(this);
-        progressDialog2.showProDialog();
+        progressDialog2.setMessage("加载中...").showProDialog();
     }
 
     class ViewHolder implements Holder<WheelDialogBean> {
