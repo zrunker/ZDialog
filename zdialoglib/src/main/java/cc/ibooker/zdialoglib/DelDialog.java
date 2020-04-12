@@ -282,18 +282,20 @@ public class DelDialog {
     /**
      * 展示Dialog
      */
-    public void showDelDialog() {
-        if (dialog != null)
+    public DelDialog showDelDialog() {
+        if (dialog != null && !dialog.isShowing())
             dialog.show();
+        return this;
     }
 
     /**
      * 关闭Dialog
      */
-    public void closeDelDialog() {
+    public DelDialog closeDelDialog() {
         if (dialog != null) {
             dialog.cancel();
         }
+        return this;
     }
 
     /**
@@ -345,8 +347,9 @@ public class DelDialog {
 
     private OnDelListener onDelListener;
 
-    public void setOnDelListener(OnDelListener onDelListener) {
+    public DelDialog setOnDelListener(OnDelListener onDelListener) {
         this.onDelListener = onDelListener;
+        return this;
     }
 
     // 执行取消接口
@@ -356,8 +359,9 @@ public class DelDialog {
 
     private OnDelCancelListener onDelCancelListener;
 
-    public void setOnDelCancelListener(OnDelCancelListener onDelCancelListener) {
+    public DelDialog setOnDelCancelListener(OnDelCancelListener onDelCancelListener) {
         this.onDelCancelListener = onDelCancelListener;
+        return this;
     }
 
 }

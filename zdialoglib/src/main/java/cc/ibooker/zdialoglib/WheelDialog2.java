@@ -57,8 +57,9 @@ public class WheelDialog2<T> {
         return dotLayout;
     }
 
-    public void setDotLayout(LinearLayout dotLayout) {
+    public WheelDialog2 setDotLayout(LinearLayout dotLayout) {
         this.dotLayout = dotLayout;
+        return this;
     }
 
     public WheelDialog2(@NonNull Context context) {
@@ -371,17 +372,19 @@ public class WheelDialog2<T> {
     /**
      * 展示Dialog
      */
-    public void showWheelDialog2() {
-        if (dialog != null)
+    public WheelDialog2 showWheelDialog2() {
+        if (dialog != null && !dialog.isShowing())
             dialog.show();
+        return this;
     }
 
     /**
      * 关闭Dialog
      */
-    public void closeWheelDialog2() {
+    public WheelDialog2 closeWheelDialog2() {
         if (dialog != null)
             dialog.cancel();
+        return this;
     }
 
     /**

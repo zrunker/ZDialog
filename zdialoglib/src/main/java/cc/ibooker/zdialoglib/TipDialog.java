@@ -648,17 +648,19 @@ public class TipDialog {
     /**
      * 展示Dialog
      */
-    public void showTipDialog() {
-        if (dialog != null)
+    public TipDialog showTipDialog() {
+        if (dialog != null && !dialog.isShowing())
             dialog.show();
+        return this;
     }
 
     /**
      * 关闭Dialog
      */
-    public void closeTipDialog() {
+    public TipDialog closeTipDialog() {
         if (dialog != null)
             dialog.cancel();
+        return this;
     }
 
     /**
@@ -690,8 +692,9 @@ public class TipDialog {
 
     private OnTipEnsureListener onTipEnsureListener;
 
-    public void setOnTipEnsureListener(OnTipEnsureListener onTipEnsureListener) {
+    public TipDialog setOnTipEnsureListener(OnTipEnsureListener onTipEnsureListener) {
         this.onTipEnsureListener = onTipEnsureListener;
+        return this;
     }
 
     // 取消事件监听
@@ -701,7 +704,8 @@ public class TipDialog {
 
     private OnTipCancelListener onTipCancelListener;
 
-    public void setOnTipCancelListener(OnTipCancelListener onTipCancelListener) {
+    public TipDialog setOnTipCancelListener(OnTipCancelListener onTipCancelListener) {
         this.onTipCancelListener = onTipCancelListener;
+        return this;
     }
 }

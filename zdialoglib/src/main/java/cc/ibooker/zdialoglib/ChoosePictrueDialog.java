@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -31,6 +32,7 @@ public class ChoosePictrueDialog {
     private Context context;
     private Dialog dialog;
     private Button localBtn, photoBtn, cancelBtn;
+    private Fragment fragment;
 
     public enum ChoosePictrueDialogGravity {
         GRAVITY_BOTTOM,
@@ -83,7 +85,10 @@ public class ChoosePictrueDialog {
                     onLocalListener.onLocal();
                 } else {
                     // 启动本地相册
-                    ChoosePictrueUtil.startLocal(context);
+                    if (fragment != null && fragment.getContext() == context)
+                        ChoosePictrueUtil.startLocal(fragment);
+                    else
+                        ChoosePictrueUtil.startLocal(context);
                 }
             }
         });
@@ -126,32 +131,42 @@ public class ChoosePictrueDialog {
         return dialog != null && dialog.isShowing();
     }
 
+    // 设置Dialog所依赖的Fragment
+    public ChoosePictrueDialog setFragment(@NonNull Fragment fragment) {
+        this.fragment = fragment;
+        return this;
+    }
+
     // 启动拍照
-    public void startPhoto() {
-        if (onPhotoListener != null) {
-            onPhotoListener.onPhoto();
+    public ChoosePictrueDialog startPhoto() {
+        // 判断是否需要拍照权限
+        int checkCallPhonePermission = ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA);
+        if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.CAMERA}, ZDialogConstantUtil.PERMISSION_CAMERA_REQUEST_CODE);
         } else {
-            // 判断是否需要拍照权限
-            int checkCallPhonePermission = ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA);
-            if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.CAMERA}, ZDialogConstantUtil.PERMISSION_CAMERA_REQUEST_CODE);
+            // 判断是否需要sdcard中读取数据的权限
+            int checkCallSDReadPermission = ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE);
+            if (checkCallSDReadPermission != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, ZDialogConstantUtil.PERMISSION_READ_EXTERNAL_STORAGE_REQUEST_CODE);
             } else {
-                // 判断是否需要sdcard中读取数据的权限
-                int checkCallSDReadPermission = ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE);
-                if (checkCallSDReadPermission != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, ZDialogConstantUtil.PERMISSION_READ_EXTERNAL_STORAGE_REQUEST_CODE);
+                // 判断是否需要写入数据到扩展存储卡(SD)的权限
+                int checkCallSDWritePermission = ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if (checkCallSDWritePermission != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, ZDialogConstantUtil.PERMISSION_WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
                 } else {
-                    // 判断是否需要写入数据到扩展存储卡(SD)的权限
-                    int checkCallSDWritePermission = ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                    if (checkCallSDWritePermission != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, ZDialogConstantUtil.PERMISSION_WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
+                    if (onPhotoListener != null) {
+                        onPhotoListener.onPhoto();
                     } else {
                         // 启动拍照
-                        ChoosePictrueUtil.startPhoto3(context);
+                        if (fragment != null && fragment.getContext() == context)
+                            ChoosePictrueUtil.startPhoto3(fragment);
+                        else
+                            ChoosePictrueUtil.startPhoto3(context);
                     }
                 }
             }
         }
+        return this;
     }
 
     /**
@@ -450,17 +465,19 @@ public class ChoosePictrueDialog {
     /**
      * 展示Dialog
      */
-    public void showChoosePictrueDialog() {
-        if (dialog != null)
+    public ChoosePictrueDialog showChoosePictrueDialog() {
+        if (dialog != null && !dialog.isShowing())
             dialog.show();
+        return this;
     }
 
     /**
      * 关闭Dialog
      */
-    public void closeChoosePictrueDialog() {
+    public ChoosePictrueDialog closeChoosePictrueDialog() {
         if (dialog != null)
             dialog.cancel();
+        return this;
     }
 
     /**
@@ -492,8 +509,9 @@ public class ChoosePictrueDialog {
 
     private OnLocalListener onLocalListener;
 
-    public void setOnLocalListener(OnLocalListener onLocalListener) {
+    public ChoosePictrueDialog setOnLocalListener(OnLocalListener onLocalListener) {
         this.onLocalListener = onLocalListener;
+        return this;
     }
 
     // 拍照按钮点击接口
@@ -503,8 +521,9 @@ public class ChoosePictrueDialog {
 
     private OnPhotoListener onPhotoListener;
 
-    public void setOnPhotoListener(OnPhotoListener onPhotoListener) {
+    public ChoosePictrueDialog setOnPhotoListener(OnPhotoListener onPhotoListener) {
         this.onPhotoListener = onPhotoListener;
+        return this;
     }
 
     // 取消按钮点击接口
@@ -514,8 +533,9 @@ public class ChoosePictrueDialog {
 
     private OnCancelListener onCancelListener;
 
-    public void setOnCancelListener(OnCancelListener onCancelListener) {
+    public ChoosePictrueDialog setOnCancelListener(OnCancelListener onCancelListener) {
         this.onCancelListener = onCancelListener;
+        return this;
     }
 
 }

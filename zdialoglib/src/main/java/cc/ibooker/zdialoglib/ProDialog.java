@@ -313,17 +313,19 @@ public class ProDialog {
     /**
      * 展示Dialog
      */
-    public void showProDialog() {
-        if (dialog != null)
+    public ProDialog showProDialog() {
+        if (dialog != null && !dialog.isShowing())
             dialog.show();
+        return this;
     }
 
     /**
      * 关闭Dialog
      */
-    public void closeProDialog() {
+    public ProDialog closeProDialog() {
         if (dialog != null)
             dialog.cancel();
+        return this;
     }
 
 }

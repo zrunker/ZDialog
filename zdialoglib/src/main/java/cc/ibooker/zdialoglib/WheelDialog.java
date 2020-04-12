@@ -65,16 +65,18 @@ public class WheelDialog {
         return dotLayout;
     }
 
-    public void setDotLayout(LinearLayout dotLayout) {
+    public WheelDialog setDotLayout(LinearLayout dotLayout) {
         this.dotLayout = dotLayout;
+        return this;
     }
 
     public TextView getTextView() {
         return textView;
     }
 
-    public void setTextView(TextView textView) {
+    public WheelDialog setTextView(TextView textView) {
         this.textView = textView;
+        return this;
     }
 
     public ViewPager getViewPager() {
@@ -153,7 +155,7 @@ public class WheelDialog {
     }
 
     // 切换页面更改
-    private void updatePage(int position) {
+    private WheelDialog updatePage(int position) {
         if (!updatePageLock) {
             updatePageLock = true;
             if (mDatas.size() > position && position >= 0) {
@@ -169,16 +171,18 @@ public class WheelDialog {
             }
             updatePageLock = false;
         }
+        return this;
     }
 
     // 自定义setPicPagerAdapter
-    private void setWheelPagerAdapter(ArrayList<WheelDialogBean> datas) {
+    private WheelDialog setWheelPagerAdapter(ArrayList<WheelDialogBean> datas) {
         if (wheelPagerAdapter == null) {
             wheelPagerAdapter = new WheelPagerAdapter(context, datas);
             viewPager.setAdapter(wheelPagerAdapter);
         } else {
             wheelPagerAdapter.reflushData(datas);
         }
+        return this;
     }
 
     /**
@@ -539,17 +543,19 @@ public class WheelDialog {
     /**
      * 展示Dialog
      */
-    public void showWheelDialog() {
-        if (dialog != null)
+    public WheelDialog showWheelDialog() {
+        if (dialog != null && !dialog.isShowing())
             dialog.show();
+        return this;
     }
 
     /**
      * 关闭Dialog
      */
-    public void closeWheelDialog() {
+    public WheelDialog closeWheelDialog() {
         if (dialog != null)
             dialog.cancel();
+        return this;
     }
 
     /**

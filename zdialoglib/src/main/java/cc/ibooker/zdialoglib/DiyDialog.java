@@ -70,9 +70,10 @@ public class DiyDialog {
      *
      * @param view 内容View
      */
-    private void setContentView(View view) {
+    private DiyDialog setContentView(View view) {
         if (view != null)
             dialog.setContentView(view);
+        return this;
     }
 
     /**
@@ -204,18 +205,20 @@ public class DiyDialog {
     /**
      * 展示Dialog
      */
-    public void showDiyDialog() {
-        if (dialog != null)
+    public DiyDialog showDiyDialog() {
+        if (dialog != null && !dialog.isShowing())
             dialog.show();
+        return this;
     }
 
     /**
      * 关闭Dialog
      */
-    public void closeDiyDialog() {
+    public DiyDialog closeDiyDialog() {
         if (dialog != null) {
             dialog.cancel();
         }
+        return this;
     }
 
     /**
