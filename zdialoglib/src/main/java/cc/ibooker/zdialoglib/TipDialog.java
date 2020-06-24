@@ -27,6 +27,7 @@ public class TipDialog {
     private Dialog dialog;
     private LinearLayout topLayout;
     private TextView titleTv, descTv, ensureTv, cancelTv;
+    private View viewBottomLine;
 
     public enum TipDialogGravity {
         GRAVITY_CENTER,
@@ -108,6 +109,7 @@ public class TipDialog {
                 }
             }
         });
+        viewBottomLine = dialog.findViewById(R.id.view_bottom_line);
 
         // 按返回键是否取消
         dialog.setCancelable(true);
@@ -427,6 +429,16 @@ public class TipDialog {
         return this;
     }
 
+    // 确定按钮显示或隐藏
+    public TipDialog setEnsureVisibility(int visibility) {
+        if (ensureTv != null) {
+            ensureTv.setVisibility(visibility);
+            if (visibility == View.GONE)
+                viewBottomLine.setVisibility(View.GONE);
+        }
+        return this;
+    }
+
     /**
      * 修改取消文字
      *
@@ -499,6 +511,16 @@ public class TipDialog {
                 || gravity == Gravity.CENTER_VERTICAL
                 || gravity == Gravity.NO_GRAVITY)) {
             cancelTv.setGravity(gravity);
+        }
+        return this;
+    }
+
+    // 确定取消显示或隐藏
+    public TipDialog setCancelVisibility(int visibility) {
+        if (cancelTv != null) {
+            cancelTv.setVisibility(visibility);
+            if (visibility == View.GONE)
+                viewBottomLine.setVisibility(View.GONE);
         }
         return this;
     }
